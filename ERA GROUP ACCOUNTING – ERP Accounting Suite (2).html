@@ -1,0 +1,3155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERA GROUP ACCOUNTING – Intelligent Business & Financial Management System</title>
+  <style>
+    /* =========================================================================
+       ERA GROUP ACCOUNTING – 100% SELF-CONTAINED GLOSSY GLASSMORPHISM THEME
+       Zero external CSS / Font / Icon CDN dependencies (Offline & Tablet Safe)
+       ========================================================================= */
+    :root {
+      --navy-950: #040d1d;
+      --navy-900: #07162F;
+      --navy-800: #0B1F40;
+      --navy-700: #112C59;
+      --electric: #087BFF;
+      --cyan: #00D4FF;
+      --green: #00D69A;
+      --purple: #8B5CF6;
+      --red: #FF5268;
+      --amber: #FBBF24;
+      --white: #FFFFFF;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border-glass: rgba(255, 255, 255, 0.11);
+      --border-cyan: rgba(0, 212, 255, 0.35);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 12px 32px rgba(2, 8, 22, 0.55);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: var(--font-sans);
+      background-color: var(--navy-900);
+      background-image:
+        radial-gradient(circle at 12% 10%, rgba(8, 123, 255, 0.22), transparent 36%),
+        radial-gradient(circle at 88% 12%, rgba(0, 212, 255, 0.15), transparent 34%),
+        radial-gradient(circle at 55% 92%, rgba(139, 92, 246, 0.14), transparent 40%),
+        linear-gradient(160deg, #051024 0%, #07162F 48%, #0B1F40 100%);
+      color: var(--text-main);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(7, 22, 47, 0.6); }
+    ::-webkit-scrollbar-thumb { background: rgba(8, 123, 255, 0.45); border-radius: 99px; }
+
+    /* App Layout Shell */
+    .app-shell {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      background: linear-gradient(180deg, rgba(6, 19, 42, 0.96) 0%, rgba(11, 31, 64, 0.94) 100%);
+      border-right: 1px solid var(--border-glass);
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 40;
+      transition: transform 0.28s ease;
+    }
+
+    .brand-box {
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--electric), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.2px;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--cyan);
+      background: rgba(8, 123, 255, 0.2);
+      border: 1px solid rgba(0, 212, 255, 0.35);
+    }
+
+    .nav-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 10px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 10px 13px;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      background: transparent;
+      color: #CBD5E1;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.18s ease;
+    }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+    }
+
+    .nav-item.active {
+      background: linear-gradient(90deg, var(--electric) 0%, rgba(0, 212, 255, 0.85) 100%);
+      color: var(--white);
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(8, 123, 255, 0.42);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .nav-item svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    /* Main Content Wrapper */
+    .main-area {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Header Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(7, 22, 47, 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left, .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-glass);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .company-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(11, 31, 64, 0.92);
+      border: 1px solid var(--border-cyan);
+      padding: 6px 12px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.14);
+    }
+
+    .company-pill select {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .company-pill select option {
+      background: var(--navy-800);
+      color: var(--white);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-glass);
+      border-radius: 11px;
+      padding: 7px 12px;
+      min-width: 210px;
+    }
+
+    .search-box input {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 12.5px;
+      outline: none;
+      width: 100%;
+    }
+
+    .autobackup-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 11px;
+      background: rgba(0, 214, 154, 0.13);
+      border: 1px solid rgba(0, 214, 154, 0.4);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .autobackup-pill:hover {
+      background: rgba(0, 214, 154, 0.22);
+      box-shadow: 0 0 14px rgba(0, 214, 154, 0.25);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    .icon-btn {
+      position: relative;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--border-glass);
+      color: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--cyan);
+      background: rgba(8, 123, 255, 0.2);
+    }
+
+    .notif-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 99px;
+    }
+
+    .profile-chip {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-glass);
+      padding: 5px 11px 5px 6px;
+      border-radius: 12px;
+    }
+
+    .avatar-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--electric), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+      color: var(--white);
+    }
+
+    /* Page Container */
+    .content-body {
+      padding: 20px;
+      max-width: 1480px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Glossy Glass Card */
+    .glass-card {
+      background: linear-gradient(145deg, rgba(14, 38, 78, 0.78) 0%, rgba(7, 22, 47, 0.88) 100%);
+      border: 1px solid var(--border-glass);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Welcome Hero Banner */
+    .hero-banner {
+      background: linear-gradient(110deg, rgba(8, 123, 255, 0.45) 0%, rgba(11, 31, 64, 0.92) 55%, rgba(0, 212, 255, 0.25) 100%);
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 30px rgba(8, 123, 255, 0.22);
+    }
+
+    .hero-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: #CBD5E1;
+    }
+
+    .period-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(7, 22, 47, 0.85);
+      border: 1px solid var(--border-cyan);
+      padding: 9px 14px;
+      border-radius: 13px;
+    }
+
+    .period-box select, .period-box input {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .period-box select option { background: var(--navy-800); }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .kpi-card {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease;
+    }
+
+    .kpi-card:hover { transform: translateY(-2px); }
+
+    .kpi-green { background: linear-gradient(145deg, rgba(0, 214, 154, 0.24) 0%, rgba(7, 22, 47, 0.92) 70%); border-color: rgba(0, 214, 154, 0.35); }
+    .kpi-red { background: linear-gradient(145deg, rgba(255, 82, 104, 0.24) 0%, rgba(7, 22, 47, 0.92) 70%); border-color: rgba(255, 82, 104, 0.35); }
+    .kpi-blue { background: linear-gradient(145deg, rgba(8, 123, 255, 0.3) 0%, rgba(7, 22, 47, 0.92) 70%); border-color: rgba(0, 212, 255, 0.38); }
+    .kpi-purple { background: linear-gradient(145deg, rgba(139, 92, 246, 0.28) 0%, rgba(7, 22, 47, 0.92) 70%); border-color: rgba(139, 92, 246, 0.38); }
+
+    .kpi-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .kpi-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .kpi-label { font-size: 12.5px; color: #CBD5E1; font-weight: 500; }
+    .kpi-value { font-size: 20px; font-weight: 800; color: var(--white); font-family: var(--font-mono); margin-top: 3px; }
+    .kpi-foot { font-size: 11.5px; margin-top: 8px; display: flex; align-items: center; gap: 6px; color: var(--text-muted); }
+
+    /* Secondary Summary Strip */
+    .mini-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .mini-stat {
+      background: rgba(7, 22, 47, 0.72);
+      border: 1px solid var(--border-glass);
+      border-radius: 13px;
+      padding: 12px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Dashboard Middle Grid */
+    .dash-mid-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr 0.95fr;
+      gap: 16px;
+    }
+
+    /* Dashboard Bottom Grid */
+    .dash-bot-grid {
+      display: grid;
+      grid-template-columns: 1.65fr 1fr;
+      gap: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 15px;
+      border-radius: 11px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--electric) 0%, #00A3FF 100%);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(8, 123, 255, 0.42);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .btn-emerald {
+      background: linear-gradient(135deg, #00B884 0%, var(--green) 100%);
+      color: #031B14;
+      box-shadow: 0 4px 16px rgba(0, 214, 154, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border-glass);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); border-color: var(--cyan); }
+
+    .btn-danger {
+      background: rgba(255, 82, 104, 0.18);
+      border-color: rgba(255, 82, 104, 0.45);
+      color: var(--red);
+    }
+
+    .btn-danger:hover { background: rgba(255, 82, 104, 0.3); }
+
+    .btn-sm { padding: 6px 11px; font-size: 11.5px; border-radius: 9px; }
+
+    /* Module Tile Grid */
+    .module-tiles {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .mod-tile {
+      background: rgba(11, 31, 64, 0.72);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 13px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      cursor: pointer;
+      color: var(--text-main);
+      font-size: 11.5px;
+      font-weight: 600;
+      transition: all 0.18s;
+    }
+
+    .mod-tile:hover {
+      border-color: var(--cyan);
+      background: rgba(8, 123, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .mod-tile-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, rgba(8, 123, 255, 0.28), rgba(0, 212, 255, 0.18));
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+    }
+
+    /* Tables */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border-glass);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(4, 13, 29, 0.75);
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.4px;
+      padding: 11px 13px;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    td {
+      padding: 11px 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+    }
+
+    tr:hover td { background: rgba(255, 255, 255, 0.03); }
+
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+    .font-mono { font-family: var(--font-mono); }
+    .text-cyan { color: var(--cyan); }
+    .text-green { color: var(--green); }
+    .text-red { color: var(--red); }
+    .text-amber { color: var(--amber); }
+    .text-purple { color: var(--purple); }
+    .text-muted { color: var(--text-muted); }
+
+    /* Pills & Badges */
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .badge-green { background: rgba(0, 214, 154, 0.18); color: var(--green); }
+    .badge-red { background: rgba(255, 82, 104, 0.18); color: var(--red); }
+    .badge-blue { background: rgba(8, 123, 255, 0.22); color: var(--cyan); }
+    .badge-amber { background: rgba(251, 191, 36, 0.18); color: var(--amber); }
+
+    /* Sub-tabs */
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .tab-btn {
+      padding: 7px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-glass);
+      background: rgba(255, 255, 255, 0.05);
+      color: #CBD5E1;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      background: var(--electric);
+      color: var(--white);
+      border-color: var(--cyan);
+      box-shadow: 0 4px 14px rgba(8, 123, 255, 0.4);
+    }
+
+    /* Forms & Inputs */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #CBD5E1;
+    }
+
+    input[type="text"], input[type="number"], input[type="date"], select, textarea {
+      background: rgba(4, 13, 29, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      padding: 9px 12px;
+      color: var(--white);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.16);
+    }
+
+    /* Modal System */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 9, 22, 0.78);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      width: 100%;
+      max-width: 640px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: linear-gradient(155deg, #0D254C 0%, #061329 100%);
+      border: 1px solid var(--border-cyan);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    /* Toast Notification */
+    .toast-stack {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 360px;
+    }
+
+    .toast-item {
+      background: rgba(7, 22, 47, 0.96);
+      border: 1px solid var(--cyan);
+      color: var(--white);
+      padding: 12px 15px;
+      border-radius: 13px;
+      font-size: 12.5px;
+      font-weight: 600;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Responsive Breakpoints (Tablet & Mobile) */
+    @media (max-width: 1180px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .mini-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .dash-mid-grid { grid-template-columns: 1fr; }
+      .dash-bot-grid { grid-template-columns: 1fr; }
+      .module-tiles { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 860px) {
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+      }
+      .sidebar.open { transform: translateX(0); }
+      .mobile-menu-btn { display: inline-flex; }
+      .search-box { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .mini-stats-grid { grid-template-columns: 1fr; }
+      .module-tiles { grid-template-columns: repeat(3, 1fr); }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .sidebar, .topbar, .no-print { display: none !important; }
+      body, .glass-card { background: #fff !important; color: #000 !important; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- LEFT SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="brand-box">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h14M4 12h11M4 18h14"/>
+            <circle cx="19" cy="12" r="2" fill="#00D4FF"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">Era Group Accounting</div>
+          <span class="brand-badge">ERP Accounting Suite</span>
+        </div>
+      </div>
+      <nav id="sidebar-nav" class="nav-scroll"></nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-area">
+      <!-- TOP NAVIGATION HEADER -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+
+          <div class="company-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+            <div>
+              <div style="font-size:10px;color:#94A3B8;line-height:1;">Perusahaan Aktif</div>
+              <select id="company-select" onchange="switchCompany(this.value)"></select>
+            </div>
+          </div>
+
+          <div class="search-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="global-search" placeholder="Cari jurnal, faktur, akun COA..." oninput="handleGlobalSearch(this.value)" />
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Auto-Backup Status Pill -->
+          <button class="autobackup-pill" onclick="openAutoBackupModal()" title="Kelola Auto-Backup & Restore Point">
+            <span class="pulse-dot"></span>
+            <span id="autobackup-badge-text">Auto-Backup Aktif</span>
+          </button>
+
+          <!-- Quick Opening Balance Button -->
+          <button class="btn btn-emerald btn-sm" onclick="openOpeningBalanceModal()">
+            + Saldo Awal
+          </button>
+
+          <!-- Notifications -->
+          <button class="icon-btn" onclick="openNotificationsModal()" title="Notifikasi Sistem">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span id="notif-count" class="notif-badge">1</span>
+          </button>
+
+          <!-- User Profile -->
+          <div class="profile-chip">
+            <div class="avatar-circle">AZ</div>
+            <div style="line-height:1.2;">
+              <div style="font-size:12px;font-weight:700;color:#fff;">Ahmad Zakaria</div>
+              <div id="role-subtitle" style="font-size:10.5px;color:#00D4FF;">Super Administrator</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- DYNAMIC MODULE VIEWPORT -->
+      <main id="app-viewport" class="content-body"></main>
+    </div>
+  </div>
+
+  <!-- MODAL OVERLAY -->
+  <div id="modal-overlay" class="modal-overlay" onclick="if(event.target===this) closeModal()">
+    <div id="modal-box" class="modal-box"></div>
+  </div>
+
+  <!-- TOAST STACK -->
+  <div id="toast-stack" class="toast-stack"></div>
+
+  <script>
+    /* =========================================================================
+       1. INLINE SVG ICON REGISTRY (100% OFFLINE & ZERO CDN DEPENDENCY)
+       ========================================================================= */
+    const ICONS = {
+      dashboard: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="2"/><rect x="14" y="3" width="7" height="5" rx="2"/><rect x="14" y="12" width="7" height="9" rx="2"/><rect x="3" y="16" width="7" height="5" rx="2"/></svg>',
+      accounting: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>',
+      sales: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>',
+      purchase: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+      inventory: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+      warehouse: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+      manufacturing: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>',
+      assets: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+      hr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      tax: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>',
+      crm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+      projects: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>',
+      budgeting: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+      documents: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+      reports: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>',
+      settings: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>'
+    };
+
+    const NAV_ITEMS = [
+      { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
+      { id: 'accounting', label: 'Accounting & Finance', icon: 'accounting' },
+      { id: 'sales', label: 'Penjualan (Sales)', icon: 'sales' },
+      { id: 'purchase', label: 'Pembelian (Purchase)', icon: 'purchase' },
+      { id: 'inventory', label: 'Persediaan (Inventory)', icon: 'inventory' },
+      { id: 'warehouse', label: 'Gudang (Warehouse)', icon: 'warehouse' },
+      { id: 'manufacturing', label: 'Produksi (Manufacturing)', icon: 'manufacturing' },
+      { id: 'assets', label: 'Aset Tetap (Fixed Asset)', icon: 'assets' },
+      { id: 'hr', label: 'HR & Payroll', icon: 'hr' },
+      { id: 'tax', label: 'Pajak (Tax)', icon: 'tax' },
+      { id: 'crm', label: 'CRM & Marketing', icon: 'crm' },
+      { id: 'projects', label: 'Proyek & Biaya', icon: 'projects' },
+      { id: 'budgeting', label: 'Anggaran (Budgeting)', icon: 'budgeting' },
+      { id: 'documents', label: 'Dokumen & Arsip', icon: 'documents' },
+      { id: 'reports', label: 'Laporan & BI', icon: 'reports' },
+      { id: 'settings', label: 'Pengaturan Sistem', icon: 'settings' }
+    ];
+
+    /* =========================================================================
+       2. DATABASE SCHEMA & CLEAN SLATE INITIALIZATION (ZERO TRANSACTION DATA)
+       ========================================================================= */
+    const DB_KEY = 'ERA_GROUP_ERP_CLEAN_V6';
+    const BACKUP_SLOTS_KEY = 'ERA_GROUP_ERP_AUTOBACKUP_SLOTS_V6';
+
+    const DEFAULT_CLEAN_DB = {
+      activeCompanyId: 'ALL',
+      activePeriod: 'Bulanan',
+      customStartDate: '2026-11-01',
+      customEndDate: '2026-11-30',
+      activeRole: 'Super Administrator',
+      autoBackup: {
+        enabled: true,
+        autoDownloadEvery: 5, // 0 = disabled, 5/10/20 = auto-download JSON
+        changesCounter: 0,
+        lastSnapshotTime: null
+      },
+      taxConfig: {
+        ppnRate: 11,
+        pph21Rate: 5,
+        pph23Rate: 2,
+        pphFinalUmkmRate: 0.5,
+        pphBadanRate: 22
+      },
+      companies: [
+        { id: 'ALL', code: 'EG', name: 'Era Group (Konsolidasi)', shortName: 'Era Group', sector: 'Holding / Konsolidasi', npwp: '01.882.441.9-012.000', isHolding: true },
+        { id: 'EBF', code: 'EB', name: 'Era Barokah Farm', shortName: 'Era Barokah Farm', sector: 'Peternakan & Livestock', npwp: '02.419.882.1-403.000', isHolding: false },
+        { id: 'EMA', code: 'EM', name: 'Era Mitra Asia', shortName: 'Era Mitra Asia', sector: 'IT & Digital Solution', npwp: '03.771.209.4-011.000', isHolding: false },
+        { id: 'VTX', code: 'VT', name: 'Visitax', shortName: 'Visitax', sector: 'Jasa Perpajakan', npwp: '04.552.103.8-015.000', isHolding: false }
+      ],
+      // Standard PSAK Chart of Accounts (All Balances Start at Rp 0)
+      coa: [
+        { code: '1-1010', name: 'Kas Kecil & Kas Operasional', category: 'Aset', normal: 'Debit' },
+        { code: '1-1020', name: 'Bank BCA Corporate', category: 'Aset', normal: 'Debit' },
+        { code: '1-1030', name: 'Bank Mandiri Corporate', category: 'Aset', normal: 'Debit' },
+        { code: '1-1100', name: 'Piutang Usaha (Accounts Receivable)', category: 'Aset', normal: 'Debit' },
+        { code: '1-1200', name: 'Persediaan Barang & Ternak', category: 'Aset', normal: 'Debit' },
+        { code: '1-1300', name: 'PPN Masukan (Pajak Dibayar Dimuka)', category: 'Aset', normal: 'Debit' },
+        { code: '1-2100', name: 'Peralatan & Aset Tetap', category: 'Aset', normal: 'Debit' },
+        { code: '1-2190', name: 'Akumulasi Penyusutan Aset Tetap', category: 'Aset', normal: 'Kredit' },
+        { code: '2-1100', name: 'Utang Usaha (Accounts Payable)', category: 'Kewajiban', normal: 'Kredit' },
+        { code: '2-1200', name: 'Utang Pajak (PPN Keluaran & PPh)', category: 'Kewajiban', normal: 'Kredit' },
+        { code: '2-1300', name: 'Utang Gaji & BPJS Karyawan', category: 'Kewajiban', normal: 'Kredit' },
+        { code: '3-1000', name: 'Modal Disetor Holding & Entitas', category: 'Ekuitas', normal: 'Kredit' },
+        { code: '3-2000', name: 'Saldo Laba (Retained Earnings)', category: 'Ekuitas', normal: 'Kredit' },
+        { code: '4-1000', name: 'Pendapatan Usaha & Penjualan', category: 'Pendapatan', normal: 'Kredit' },
+        { code: '4-2000', name: 'Pendapatan Jasa & Konsultasi', category: 'Pendapatan', normal: 'Kredit' },
+        { code: '5-1000', name: 'Harga Pokok Penjualan (HPP)', category: 'Beban', normal: 'Debit' },
+        { code: '6-1000', name: 'Beban Gaji, Tunjangan & Payroll', category: 'Beban', normal: 'Debit' },
+        { code: '6-2000', name: 'Beban Operasional & Umum', category: 'Beban', normal: 'Debit' },
+        { code: '6-3000', name: 'Beban Penyusutan Aset Tetap', category: 'Beban', normal: 'Debit' }
+      ],
+      // Zero Initial Transactions (Clean Slate)
+      journals: [],
+      salesInvoices: [],
+      purchaseOrders: [],
+      inventory: [],
+      manufacturingOrders: [],
+      assets: [],
+      employees: [],
+      crmLeads: [],
+      projects: [],
+      budgets: [],
+      documents: [],
+      activities: [],
+      notifications: [
+        { id: 'N-INIT', title: 'Sistem Siap Digunakan (Clean Slate)', desc: 'Seluruh saldo awal Rp 0. Klik "+ Saldo Awal" untuk mengisi neraca awal.', time: 'Baru saja' }
+      ],
+      auditLogs: [
+        { time: new Date().toISOString().slice(0, 16).replace('T', ' '), user: 'Ahmad Zakaria', action: 'INIT_CLEAN_SLATE', detail: 'Database kosong (Rp 0) & Auto-Backup aktif' }
+      ]
+    };
+
+    let DB = loadDatabase();
+    let currentRoute = 'dashboard';
+    let currentAccTab = 'coa';
+    let chartMetric = 'rev';
+    let searchQuery = '';
+
+    function loadDatabase() {
+      try {
+        const raw = localStorage.getItem(DB_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && Array.isArray(parsed.coa) && Array.isArray(parsed.companies)) {
+            if (!parsed.autoBackup) parsed.autoBackup = JSON.parse(JSON.stringify(DEFAULT_CLEAN_DB.autoBackup));
+            return parsed;
+          }
+        }
+      } catch (err) {
+        console.warn('Storage load fallback:', err);
+      }
+      return JSON.parse(JSON.stringify(DEFAULT_CLEAN_DB));
+    }
+
+    function getBackupSlots() {
+      try {
+        const raw = localStorage.getItem(BACKUP_SLOTS_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function saveDatabase(backupReason = null, forceDownload = false) {
+      try {
+        if (backupReason) {
+          recordAutoBackupSnapshot(backupReason, forceDownload);
+        }
+        localStorage.setItem(DB_KEY, JSON.stringify(DB));
+      } catch (err) {
+        console.warn('LocalStorage save warning:', err);
+      }
+    }
+
+    function recordAutoBackupSnapshot(reason, forceDownload = false) {
+      try {
+        const now = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        const stamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+        const fileStamp = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}`;
+
+        DB.autoBackup.lastSnapshotTime = stamp;
+
+        if (DB.autoBackup.enabled) {
+          const metrics = computeFinancials();
+          const slots = getBackupSlots();
+          slots.unshift({
+            id: 'SNAP-' + now.getTime(),
+            timestamp: stamp,
+            reason,
+            companyCount: DB.companies.length,
+            journalCount: DB.journals.length,
+            totalAssets: metrics.totalAssets,
+            snapshotData: JSON.parse(JSON.stringify(DB))
+          });
+          if (slots.length > 10) slots.length = 10;
+          localStorage.setItem(BACKUP_SLOTS_KEY, JSON.stringify(slots));
+
+          const threshold = Number(DB.autoBackup.autoDownloadEvery) || 0;
+          if (threshold > 0) {
+            DB.autoBackup.changesCounter = (DB.autoBackup.changesCounter || 0) + 1;
+            if (DB.autoBackup.changesCounter >= threshold || forceDownload) {
+              DB.autoBackup.changesCounter = 0;
+              downloadBackupJSON(`ERA-GROUP-AUTOBACKUP-${fileStamp}.json`);
+            }
+          } else if (forceDownload) {
+            downloadBackupJSON(`ERA-GROUP-BACKUP-${fileStamp}.json`);
+          }
+        }
+        updateAutoBackupIndicator();
+      } catch (err) {
+        console.warn('Snapshot error:', err);
+      }
+    }
+
+    function downloadBackupJSON(filename) {
+      try {
+        const bundle = {
+          application: 'ERA GROUP ACCOUNTING – ERP Accounting Suite',
+          exportedAt: new Date().toISOString(),
+          database: DB
+        };
+        const blob = new Blob([JSON.stringify(bundle, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showToast(`File backup ${filename} berhasil diunduh!`);
+      } catch (err) {
+        showToast('Gagal mengunduh file backup JSON.', 'error');
+      }
+    }
+
+    function updateAutoBackupIndicator() {
+      const el = document.getElementById('autobackup-badge-text');
+      if (!el) return;
+      if (!DB.autoBackup.enabled) {
+        el.textContent = 'Auto-Backup Off';
+        return;
+      }
+      el.textContent = DB.autoBackup.lastSnapshotTime
+        ? `Auto-Backup • ${DB.autoBackup.lastSnapshotTime.slice(11, 16)}`
+        : 'Auto-Backup Aktif';
+    }
+
+    /* =========================================================================
+       3. DOUBLE-ENTRY ACCOUNTING ENGINE & FINANCIAL CALCULATOR
+       ========================================================================= */
+    function formatIDR(num) {
+      const val = Number(num) || 0;
+      const abs = Math.abs(Math.round(val)).toLocaleString('id-ID');
+      return val < 0 ? `-Rp ${abs}` : `Rp ${abs}`;
+    }
+
+    function todayISO() {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    function getFilteredJournals() {
+      return DB.journals.filter(j => {
+        if (DB.activeCompanyId !== 'ALL' && j.companyId !== DB.activeCompanyId) return false;
+        if (DB.activePeriod === 'Custom Date') {
+          if (DB.customStartDate && j.date < DB.customStartDate) return false;
+          if (DB.customEndDate && j.date > DB.customEndDate) return false;
+        }
+        return true;
+      });
+    }
+
+    function getAccountBalance(code, journalsList = null) {
+      const acc = DB.coa.find(a => a.code === code);
+      if (!acc) return 0;
+      const list = journalsList || getFilteredJournals();
+      let debit = 0;
+      let credit = 0;
+      list.forEach(j => {
+        j.lines.forEach(l => {
+          if (l.accountCode === code) {
+            debit += Number(l.debit) || 0;
+            credit += Number(l.credit) || 0;
+          }
+        });
+      });
+      return acc.normal === 'Debit' ? (debit - credit) : (credit - debit);
+    }
+
+    function computeFinancials() {
+      const list = getFilteredJournals();
+      const cash = getAccountBalance('1-1010', list);
+      const bankBCA = getAccountBalance('1-1020', list);
+      const bankMandiri = getAccountBalance('1-1030', list);
+      const totalCashBank = cash + bankBCA + bankMandiri;
+
+      const ar = getAccountBalance('1-1100', list);
+      const inventoryVal = getAccountBalance('1-1200', list);
+      const ppnIn = getAccountBalance('1-1300', list);
+      const fixedAssets = getAccountBalance('1-2100', list);
+      const accumDep = getAccountBalance('1-2190', list);
+      const totalAssets = totalCashBank + ar + inventoryVal + ppnIn + (fixedAssets - accumDep);
+
+      const ap = getAccountBalance('2-1100', list);
+      const taxPayable = getAccountBalance('2-1200', list);
+      const payrollPayable = getAccountBalance('2-1300', list);
+      const totalLiabilities = ap + taxPayable + payrollPayable;
+
+      const rev1 = getAccountBalance('4-1000', list);
+      const rev2 = getAccountBalance('4-2000', list);
+      const totalRevenue = rev1 + rev2;
+
+      const cogs = getAccountBalance('5-1000', list);
+      const salExp = getAccountBalance('6-1000', list);
+      const opExp = getAccountBalance('6-2000', list);
+      const depExp = getAccountBalance('6-3000', list);
+      const totalExpense = cogs + salExp + opExp + depExp;
+
+      const netProfit = totalRevenue - totalExpense;
+      const equity = getAccountBalance('3-1000', list) + getAccountBalance('3-2000', list) + netProfit;
+
+      return {
+        cash,
+        bankTotal: bankBCA + bankMandiri,
+        totalCashBank,
+        ar,
+        ap,
+        inventoryVal,
+        totalAssets,
+        totalLiabilities,
+        equity,
+        totalRevenue,
+        totalExpense,
+        netProfit,
+        cogs,
+        salExp,
+        opExp,
+        depExp
+      };
+    }
+
+    function postJournalEntry({ companyId, date, ref, description, module, lines }) {
+      const cleanLines = lines.filter(l => (Number(l.debit) || 0) > 0 || (Number(l.credit) || 0) > 0);
+      const sumDebit = cleanLines.reduce((s, l) => s + (Number(l.debit) || 0), 0);
+      const sumCredit = cleanLines.reduce((s, l) => s + (Number(l.credit) || 0), 0);
+
+      if (cleanLines.length < 2 || Math.abs(sumDebit - sumCredit) > 0.01 || sumDebit <= 0) {
+        throw new Error(`Jurnal tidak seimbang! Total Debit (${formatIDR(sumDebit)}) ≠ Total Kredit (${formatIDR(sumCredit)}).`);
+      }
+
+      const id = 'JV-' + String(DB.journals.length + 1).padStart(4, '0');
+      const entry = {
+        id,
+        companyId: companyId === 'ALL' ? 'EBF' : companyId,
+        date: date || todayISO(),
+        ref: ref || id,
+        description,
+        module: module || 'Accounting',
+        lines: cleanLines.map(l => ({
+          accountCode: l.accountCode,
+          debit: Number(l.debit) || 0,
+          credit: Number(l.credit) || 0
+        }))
+      };
+
+      DB.journals.unshift(entry);
+      DB.activities.unshift({
+        id: 'ACT-' + Date.now(),
+        title: `${id} • ${description}`,
+        subtitle: `${entry.companyId} • ${formatIDR(sumDebit)}`,
+        time: new Date().toTimeString().slice(0, 5)
+      });
+      DB.auditLogs.unshift({
+        time: new Date().toISOString().slice(0, 16).replace('T', ' '),
+        user: 'Ahmad Zakaria',
+        action: `POST_${module.toUpperCase()}`,
+        detail: `${id} (${entry.companyId}): ${description} - ${formatIDR(sumDebit)}`
+      });
+
+      saveDatabase(`${id}: ${description.slice(0, 26)}`);
+      return entry;
+    }
+
+    /* =========================================================================
+       4. NAVIGATION, HEADER & COMPANY SWITCHER
+       ========================================================================= */
+    function renderSidebar() {
+      const nav = document.getElementById('sidebar-nav');
+      nav.innerHTML = NAV_ITEMS.map(item => `
+        <button class="nav-item ${currentRoute === item.id ? 'active' : ''}" onclick="navigate('${item.id}')">
+          ${ICONS[item.icon] || ''}
+          <span>${item.label}</span>
+        </button>
+      `).join('');
+    }
+
+    function renderCompanySelect() {
+      const sel = document.getElementById('company-select');
+      sel.innerHTML = DB.companies.map(c =>
+        `<option value="${c.id}" ${c.id === DB.activeCompanyId ? 'selected' : ''}>${c.name}</option>`
+      ).join('') + `<option value="__ADD__">+ Tambah Perusahaan Baru</option>`;
+    }
+
+    function switchCompany(val) {
+      if (val === '__ADD__') {
+        renderCompanySelect();
+        openAddCompanyModal();
+        return;
+      }
+      DB.activeCompanyId = val;
+      saveDatabase();
+      renderView();
+      const c = DB.companies.find(x => x.id === val);
+      showToast(`Beralih ke entitas: ${c ? c.name : val}`);
+    }
+
+    function changePeriod(val) {
+      DB.activePeriod = val;
+      saveDatabase();
+      renderView();
+    }
+
+    function navigate(route) {
+      currentRoute = route;
+      document.getElementById('sidebar').classList.remove('open');
+      renderSidebar();
+      renderView();
+    }
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    function handleGlobalSearch(q) {
+      searchQuery = q.trim().toLowerCase();
+      renderView();
+    }
+
+    /* =========================================================================
+       5. DASHBOARD VIEW (MATCHING REFERENCE + ZERO DATA READY)
+       ========================================================================= */
+    function renderDashboard() {
+      const m = computeFinancials();
+      const recentJournals = getFilteredJournals().slice(0, 5);
+
+      return `
+        <!-- Hero Welcome Banner -->
+        <section class="hero-banner">
+          <div>
+            <h1 class="hero-title">Selamat Datang, Ahmad Zakaria 👋</h1>
+            <p class="hero-sub">Pantau dan kelola keuangan, operasional, dan kinerja bisnis Anda secara real-time.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <div class="period-box">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <div style="font-size:10px;color:#94A3B8;">Filter Periode</div>
+                <select onchange="changePeriod(this.value)">
+                  ${['Harian', 'Mingguan', 'Bulanan', 'Kuartalan', 'Tahunan', 'Custom Date'].map(p =>
+                    `<option value="${p}" ${DB.activePeriod === p ? 'selected' : ''}>${p}</option>`
+                  ).join('')}
+                </select>
+              </div>
+            </div>
+            ${DB.activePeriod === 'Custom Date' ? `
+              <div class="period-box">
+                <input type="date" value="${DB.customStartDate}" onchange="DB.customStartDate=this.value;saveDatabase();renderView();" />
+                <span style="color:#94A3B8;">s/d</span>
+                <input type="date" value="${DB.customEndDate}" onchange="DB.customEndDate=this.value;saveDatabase();renderView();" />
+              </div>
+            ` : ''}
+          </div>
+        </section>
+
+        <!-- 4 Glossy KPI Cards -->
+        <section class="kpi-grid">
+          <div class="kpi-card kpi-green">
+            <div class="kpi-top">
+              <div class="kpi-icon" style="background:rgba(0,214,154,0.2);color:#00D69A;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <div>
+                <div class="kpi-label">Total Pendapatan</div>
+                <div class="kpi-value">${formatIDR(m.totalRevenue)}</div>
+              </div>
+            </div>
+            <div class="kpi-foot">
+              <span class="text-green font-mono">${m.totalRevenue > 0 ? '● Tercatat' : '○ Siap Diisi'}</span>
+              <span>• Periode ${DB.activePeriod}</span>
+            </div>
+          </div>
+
+          <div class="kpi-card kpi-red">
+            <div class="kpi-top">
+              <div class="kpi-icon" style="background:rgba(255,82,104,0.2);color:#FF5268;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h6"/></svg>
+              </div>
+              <div>
+                <div class="kpi-label">Total Biaya</div>
+                <div class="kpi-value">${formatIDR(m.totalExpense)}</div>
+              </div>
+            </div>
+            <div class="kpi-foot">
+              <span class="text-red font-mono">${m.totalExpense > 0 ? '● Tercatat' : '○ Rp 0'}</span>
+              <span>• HPP & Operasional</span>
+            </div>
+          </div>
+
+          <div class="kpi-card kpi-blue">
+            <div class="kpi-top">
+              <div class="kpi-icon" style="background:rgba(8,123,255,0.28);color:#00D4FF;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/></svg>
+              </div>
+              <div>
+                <div class="kpi-label">Laba Bersih</div>
+                <div class="kpi-value">${formatIDR(m.netProfit)}</div>
+              </div>
+            </div>
+            <div class="kpi-foot">
+              <span class="text-cyan font-mono">${m.netProfit >= 0 ? '● Surplus / Netral' : '▼ Defisit'}</span>
+              <span>• Laba Rugi Real-Time</span>
+            </div>
+          </div>
+
+          <div class="kpi-card kpi-purple">
+            <div class="kpi-top">
+              <div class="kpi-icon" style="background:rgba(139,92,246,0.25);color:#A78BFA;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M16 12h.01"/></svg>
+              </div>
+              <div>
+                <div class="kpi-label">Saldo Kas & Bank</div>
+                <div class="kpi-value">${formatIDR(m.totalCashBank)}</div>
+              </div>
+            </div>
+            <div class="kpi-foot">
+              <span class="text-purple font-mono">● Kas + BCA + Mandiri</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Balance Sheet Quick Strip -->
+        <section class="mini-stats-grid">
+          <div class="mini-stat">
+            <span class="text-muted" style="font-size:12px;">Piutang Usaha (AR)</span>
+            <strong class="font-mono text-cyan">${formatIDR(m.ar)}</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="text-muted" style="font-size:12px;">Utang Usaha (AP)</span>
+            <strong class="font-mono text-amber">${formatIDR(m.ap)}</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="text-muted" style="font-size:12px;">Total Aset</span>
+            <strong class="font-mono text-green">${formatIDR(m.totalAssets)}</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="text-muted" style="font-size:12px;">Total Kewajiban</span>
+            <strong class="font-mono text-red">${formatIDR(m.totalLiabilities)}</strong>
+          </div>
+        </section>
+
+        <!-- Middle Analytics Row: Financial Chart + Cash Flow Donut + Multi Perusahaan -->
+        <section class="dash-mid-grid">
+          <!-- Kinerja Keuangan Chart -->
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+              <div>
+                <h2 style="font-size:15px;font-weight:800;">Kinerja Keuangan</h2>
+                <div style="font-size:11.5px;color:#94A3B8;">Grafik real-time berdasarkan jurnal transaksi</div>
+              </div>
+              <div style="display:flex;gap:6px;">
+                <button class="btn btn-sm ${chartMetric==='rev'?'btn-primary':'btn-secondary'}" onclick="chartMetric='rev';renderView();">Pendapatan</button>
+                <button class="btn btn-sm ${chartMetric==='exp'?'btn-primary':'btn-secondary'}" onclick="chartMetric='exp';renderView();">Biaya</button>
+                <button class="btn btn-sm ${chartMetric==='profit'?'btn-primary':'btn-secondary'}" onclick="chartMetric='profit';renderView();">Laba Bersih</button>
+              </div>
+            </div>
+            ${renderSVGPerformanceChart(m)}
+          </div>
+
+          <!-- Arus Kas Donut -->
+          <div class="glass-card" style="display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h2 style="font-size:15px;font-weight:800;">Arus Kas (Cash Flow)</h2>
+              <button class="btn btn-sm btn-secondary" onclick="navigate('accounting')">Detail</button>
+            </div>
+            ${renderDonutCashFlow(m)}
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;">
+              <div style="display:flex;justify-content:space-between;">
+                <span style="color:#00D4FF;">● Kas Operasional</span>
+                <strong class="font-mono">${formatIDR(m.cash)}</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;">
+                <span style="color:#8B5CF6;">● Rekening Bank</span>
+                <strong class="font-mono">${formatIDR(m.bankTotal)}</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border-glass);">
+                <span style="font-weight:700;">Total Likuiditas</span>
+                <strong class="font-mono text-green">${formatIDR(m.totalCashBank)}</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multi Perusahaan Card -->
+          <div class="glass-card" style="display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <h2 style="font-size:15px;font-weight:800;">Multi Perusahaan</h2>
+              <button class="btn btn-sm btn-primary" onclick="openAddCompanyModal()">+ Entitas</button>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              ${DB.companies.map(c => {
+                const active = c.id === DB.activeCompanyId;
+                return `
+                  <div onclick="switchCompany('${c.id}')" style="cursor:pointer;padding:9px 11px;border-radius:12px;border:1px solid ${active?'#00D4FF':'rgba(255,255,255,0.08)'};background:${active?'rgba(8,123,255,0.22)':'rgba(4,13,29,0.55)'};display:flex;align-items:center;justify-content:space-between;">
+                    <div style="display:flex;align-items:center;gap:9px;">
+                      <div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#087BFF,#00D4FF);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;">${c.code}</div>
+                      <div>
+                        <div style="font-size:12.5px;font-weight:700;color:#fff;">${c.shortName}</div>
+                        <div style="font-size:10.5px;color:#94A3B8;">${c.sector}</div>
+                      </div>
+                    </div>
+                    <span style="font-size:11px;font-weight:700;color:${active?'#00D69A':'#64748B'};">${active?'✓ Aktif':'Pilih'}</span>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Row: Modul Utama ERP + Aktivitas Terbaru -->
+        <section class="dash-bot-grid">
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <h2 style="font-size:15px;font-weight:800;">Modul Utama (ERP)</h2>
+              <span style="font-size:11.5px;color:#94A3B8;">Klik modul untuk mulai menginput data</span>
+            </div>
+            <div class="module-tiles">
+              ${NAV_ITEMS.filter(x => x.id !== 'dashboard' && x.id !== 'settings').map(mod => `
+                <button class="mod-tile" onclick="navigate('${mod.id}')">
+                  <div class="mod-tile-icon">${ICONS[mod.icon]}</div>
+                  <span>${mod.label.split(' (')[0]}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Aktivitas Terbaru -->
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <h2 style="font-size:15px;font-weight:800;">Aktivitas Terbaru</h2>
+              <button class="btn btn-sm btn-secondary" onclick="navigate('accounting')">Lihat Jurnal</button>
+            </div>
+            ${DB.activities.length === 0 ? `
+              <div style="padding:22px 14px;border-radius:14px;border:1px dashed rgba(0,212,255,0.35);background:rgba(4,13,29,0.5);text-align:center;">
+                <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:5px;">Database Masih Bersih (Rp 0)</div>
+                <p style="font-size:12px;color:#94A3B8;margin-bottom:12px;">Mulai dengan mengisi Saldo Awal perusahaan atau mencatat transaksi pertama Anda.</p>
+                <button class="btn btn-emerald btn-sm" onclick="openOpeningBalanceModal()">+ Input Saldo Awal Sekarang</button>
+              </div>
+            ` : `
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                ${DB.activities.slice(0, 5).map(a => `
+                  <div style="padding:9px 11px;border-radius:11px;background:rgba(4,13,29,0.65);border:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;gap:8px;">
+                    <div style="min-width:0;">
+                      <div style="font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${a.title}</div>
+                      <div style="font-size:11px;color:#94A3B8;">${a.subtitle}</div>
+                    </div>
+                    <span style="font-size:10.5px;color:#00D4FF;font-family:var(--font-mono);">${a.time}</span>
+                  </div>
+                `).join('')}
+              </div>
+            `}
+          </div>
+        </section>
+
+        <!-- Shortcut Cepat Bottom Bar -->
+        <section class="glass-card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#00D4FF;">⚡ Shortcut Cepat</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn btn-emerald btn-sm" onclick="openOpeningBalanceModal()">+ Saldo Awal</button>
+            <button class="btn btn-primary btn-sm" onclick="openNewSaleModal()">+ Buat Penjualan</button>
+            <button class="btn btn-secondary btn-sm" onclick="openNewPurchaseModal()">+ Buat Pembelian</button>
+            <button class="btn btn-secondary btn-sm" onclick="openNewJournalModal()">+ Input Jurnal</button>
+            <button class="btn btn-secondary btn-sm" onclick="openAutoBackupModal()">🛡️ Auto-Backup</button>
+            <button class="btn btn-secondary btn-sm" onclick="exportAllCSV()">📥 Ekspor CSV</button>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderSVGPerformanceChart(m) {
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov'];
+      const currentVal = chartMetric === 'rev' ? m.totalRevenue : (chartMetric === 'exp' ? m.totalExpense : m.netProfit);
+      const vals = months.map((_, idx) => idx === 10 ? Math.max(0, currentVal) : 0);
+      const maxVal = Math.max(...vals, 1000000);
+      const w = 520, h = 165, padL = 16, padR = 16, padT = 18, padB = 26;
+      const plotW = w - padL - padR;
+      const plotH = h - padT - padB;
+
+      const pts = vals.map((v, i) => {
+        const x = padL + (i / (months.length - 1)) * plotW;
+        const y = padT + plotH - (v / maxVal) * plotH;
+        return { x, y, v, label: months[i] };
+      });
+
+      const polyline = pts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+      const area = `${pts[0].x},${padT + plotH} ${polyline} ${pts[pts.length - 1].x},${padT + plotH}`;
+      const strokeColor = chartMetric === 'exp' ? '#FF5268' : (chartMetric === 'profit' ? '#00D69A' : '#00D4FF');
+
+      return `
+        <svg viewBox="0 0 ${w} ${h}" style="width:100%;height:175px;display:block;">
+          <defs>
+            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="${strokeColor}" stop-opacity="0.38"/>
+              <stop offset="100%" stop-color="${strokeColor}" stop-opacity="0.0"/>
+            </linearGradient>
+          </defs>
+          <line x1="${padL}" y1="${padT + plotH}" x2="${w - padR}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <line x1="${padL}" y1="${padT + plotH * 0.5}" x2="${w - padR}" y2="${padT + plotH * 0.5}" stroke="rgba(255,255,255,0.07)" stroke-dasharray="4 4"/>
+          <polygon points="${area}" fill="url(#chartGrad)"/>
+          <polyline fill="none" stroke="${strokeColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="${polyline}"/>
+          ${pts.map(p => `
+            <circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" fill="#07162F" stroke="${strokeColor}" stroke-width="2.2"/>
+            <text x="${p.x.toFixed(1)}" y="${h - 7}" text-anchor="middle" fill="#94A3B8" font-size="10">${p.label}</text>
+          `).join('')}
+        </svg>
+      `;
+    }
+
+    function renderDonutCashFlow(m) {
+      const total = m.totalCashBank;
+      const r = 46;
+      const c = 2 * Math.PI * r;
+      const cashPct = total > 0 ? (m.cash / total) : 0;
+      const bankPct = total > 0 ? (m.bankTotal / total) : 0;
+      const cashLen = cashPct * c;
+      const bankLen = bankPct * c;
+
+      return `
+        <div style="display:flex;align-items:center;justify-content:center;padding:8px 0;">
+          <svg width="136" height="136" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="${r}" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="13"/>
+            ${total > 0 ? `
+              <circle cx="60" cy="60" r="${r}" fill="none" stroke="#00D4FF" stroke-width="13"
+                stroke-dasharray="${cashLen} ${c}" transform="rotate(-90 60 60)"/>
+              <circle cx="60" cy="60" r="${r}" fill="none" stroke="#8B5CF6" stroke-width="13"
+                stroke-dasharray="${bankLen} ${c}" stroke-dashoffset="${-cashLen}" transform="rotate(-90 60 60)"/>
+            ` : ''}
+            <text x="60" y="57" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="800">${total > 0 ? 'Likuiditas' : 'Rp 0'}</text>
+            <text x="60" y="71" text-anchor="middle" fill="#94A3B8" font-size="9">${total > 0 ? 'Aktif' : 'Saldo Awal'}</text>
+          </svg>
+        </div>
+      `;
+    }
+
+    /* =========================================================================
+       6. ACCOUNTING & FINANCE MODULE (COA, JOURNAL, LEDGER, TRIAL BALANCE, P&L, BS)
+       ========================================================================= */
+    function renderAccountingModule() {
+      const m = computeFinancials();
+      const journals = getFilteredJournals();
+
+      let tabBody = '';
+      if (currentAccTab === 'coa') {
+        const filteredCoa = DB.coa.filter(a =>
+          !searchQuery || a.code.toLowerCase().includes(searchQuery) || a.name.toLowerCase().includes(searchQuery)
+        );
+        tabBody = `
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h3 style="font-size:15px;font-weight:800;">Chart of Accounts (COA Standar PSAK)</h3>
+              <p style="font-size:12px;color:#94A3B8;">Saldo akun dihitung otomatis dari jurnal Double-Entry.</p>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn btn-emerald btn-sm" onclick="openOpeningBalanceModal()">+ Input Saldo Awal</button>
+              <button class="btn btn-primary btn-sm" onclick="openAddCoaModal()">+ Tambah Akun COA</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kode Akun</th>
+                  <th>Nama Akun</th>
+                  <th>Kategori</th>
+                  <th>Saldo Normal</th>
+                  <th class="text-right">Saldo Aktual</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${filteredCoa.map(acc => {
+                  const bal = getAccountBalance(acc.code, journals);
+                  return `
+                    <tr>
+                      <td class="font-mono text-cyan" style="font-weight:700;">${acc.code}</td>
+                      <td style="font-weight:600;">${acc.name}</td>
+                      <td><span class="badge badge-blue">${acc.category}</span></td>
+                      <td class="text-muted">${acc.normal}</td>
+                      <td class="text-right font-mono" style="font-weight:700;">${formatIDR(bal)}</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } else if (currentAccTab === 'journal') {
+        tabBody = `
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h3 style="font-size:15px;font-weight:800;">Jurnal Umum (Double-Entry General Journal)</h3>
+              <p style="font-size:12px;color:#94A3B8;">Setiap transaksi wajib seimbang (Total Debit = Total Kredit).</p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-emerald btn-sm" onclick="openOpeningBalanceModal()">+ Saldo Awal</button>
+              <button class="btn btn-primary btn-sm" onclick="openNewJournalModal()">+ Input Jurnal Umum</button>
+            </div>
+          </div>
+          ${journals.length === 0 ? `
+            <div style="padding:28px;text-align:center;border:1px dashed rgba(255,255,255,0.18);border-radius:14px;">
+              <div style="font-weight:700;margin-bottom:6px;">Belum Ada Jurnal Tercatat</div>
+              <div style="font-size:12px;color:#94A3B8;">Gunakan tombol "+ Saldo Awal" atau "+ Input Jurnal Umum" untuk mencatat transaksi.</div>
+            </div>
+          ` : `
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              ${journals.map(j => `
+                <div style="background:rgba(4,13,29,0.7);border:1px solid var(--border-glass);border-radius:13px;padding:13px;">
+                  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                    <div>
+                      <span class="font-mono text-cyan" style="font-weight:800;">${j.id}</span>
+                      <span class="badge badge-blue" style="margin-left:6px;">${j.companyId}</span>
+                      <strong style="margin-left:8px;">${j.description}</strong>
+                    </div>
+                    <span class="font-mono text-muted" style="font-size:12px;">${j.date} • Ref: ${j.ref}</span>
+                  </div>
+                  <div class="table-wrap">
+                    <table>
+                      <thead>
+                        <tr><th>Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th></tr>
+                      </thead>
+                      <tbody>
+                        ${j.lines.map(l => {
+                          const coaObj = DB.coa.find(c => c.code === l.accountCode);
+                          return `
+                            <tr>
+                              <td><span class="font-mono text-cyan">${l.accountCode}</span> - ${coaObj ? coaObj.name : ''}</td>
+                              <td class="text-right font-mono text-green">${l.debit > 0 ? formatIDR(l.debit) : '-'}</td>
+                              <td class="text-right font-mono text-amber">${l.credit > 0 ? formatIDR(l.credit) : '-'}</td>
+                            </tr>
+                          `;
+                        }).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `}
+        `;
+      } else if (currentAccTab === 'trial') {
+        let totD = 0, totC = 0;
+        const rows = DB.coa.map(acc => {
+          const bal = getAccountBalance(acc.code, journals);
+          const d = acc.normal === 'Debit' ? Math.max(0, bal) : Math.max(0, -bal);
+          const c = acc.normal === 'Kredit' ? Math.max(0, bal) : Math.max(0, -bal);
+          totD += d; totC += c;
+          return { acc, d, c };
+        });
+        tabBody = `
+          <h3 style="font-size:15px;font-weight:800;margin-bottom:12px;">Neraca Saldo (Trial Balance)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Kode</th><th>Nama Akun</th><th class="text-right">Debit</th><th class="text-right">Kredit</th></tr></thead>
+              <tbody>
+                ${rows.map(r => `
+                  <tr>
+                    <td class="font-mono text-cyan">${r.acc.code}</td>
+                    <td>${r.acc.name}</td>
+                    <td class="text-right font-mono">${formatIDR(r.d)}</td>
+                    <td class="text-right font-mono">${formatIDR(r.c)}</td>
+                  </tr>
+                `).join('')}
+                <tr style="background:rgba(8,123,255,0.16);font-weight:800;">
+                  <td colspan="2">TOTAL NERACA SALDO (${Math.abs(totD - totC) < 1 ? 'SEIMBANG ✓' : 'SELISIH'})</td>
+                  <td class="text-right font-mono text-green">${formatIDR(totD)}</td>
+                  <td class="text-right font-mono text-cyan">${formatIDR(totC)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+      } else if (currentAccTab === 'pnl') {
+        tabBody = `
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <h3 style="font-size:15px;font-weight:800;">Laporan Laba Rugi (Income Statement)</h3>
+            <button class="btn btn-sm btn-secondary" onclick="window.print()">🖨️ Cetak / PDF</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr style="background:rgba(0,214,154,0.12);font-weight:700;"><td colspan="2">PENDAPATAN USAHA</td></tr>
+                <tr><td>Pendapatan Penjualan & Jasa Utama (4-1000 & 4-2000)</td><td class="text-right font-mono text-green">${formatIDR(m.totalRevenue)}</td></tr>
+                <tr style="background:rgba(255,82,104,0.12);font-weight:700;"><td colspan="2">BEBAN & HARGA POKOK PENJUALAN</td></tr>
+                <tr><td>Harga Pokok Penjualan / HPP (5-1000)</td><td class="text-right font-mono">${formatIDR(m.cogs)}</td></tr>
+                <tr><td>Beban Gaji & Tunjangan (6-1000)</td><td class="text-right font-mono">${formatIDR(m.salExp)}</td></tr>
+                <tr><td>Beban Operasional & Umum (6-2000)</td><td class="text-right font-mono">${formatIDR(m.opExp)}</td></tr>
+                <tr><td>Beban Penyusutan Aset Tetap (6-3000)</td><td class="text-right font-mono">${formatIDR(m.depExp)}</td></tr>
+                <tr style="background:rgba(8,123,255,0.22);font-weight:800;font-size:14px;">
+                  <td>LABA / (RUGI) BERSIH PERIODE BERJALAN</td>
+                  <td class="text-right font-mono text-cyan">${formatIDR(m.netProfit)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+      } else if (currentAccTab === 'bs') {
+        tabBody = `
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <h3 style="font-size:15px;font-weight:800;">Neraca Keuangan (Balance Sheet)</h3>
+            <button class="btn btn-sm btn-secondary" onclick="window.print()">🖨️ Cetak / PDF</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr style="background:rgba(0,212,255,0.14);font-weight:800;"><td colspan="2">ASET (AKTIVA)</td></tr>
+                <tr><td>Kas & Setara Kas (Kas, Bank BCA, Bank Mandiri)</td><td class="text-right font-mono">${formatIDR(m.totalCashBank)}</td></tr>
+                <tr><td>Piutang Usaha (Accounts Receivable)</td><td class="text-right font-mono">${formatIDR(m.ar)}</td></tr>
+                <tr><td>Persediaan Barang & Ternak</td><td class="text-right font-mono">${formatIDR(m.inventoryVal)}</td></tr>
+                <tr><td>Aset Tetap (Neto setelah Akum. Penyusutan)</td><td class="text-right font-mono">${formatIDR(m.totalAssets - m.totalCashBank - m.ar - m.inventoryVal)}</td></tr>
+                <tr style="font-weight:800;background:rgba(255,255,255,0.05);"><td>TOTAL ASET</td><td class="text-right font-mono text-green">${formatIDR(m.totalAssets)}</td></tr>
+                <tr style="background:rgba(139,92,246,0.16);font-weight:800;"><td colspan="2">KEWAJIBAN & EKUITAS (PASIVA)</td></tr>
+                <tr><td>Total Kewajiban / Liabilitas (Utang Usaha, Pajak, Gaji)</td><td class="text-right font-mono">${formatIDR(m.totalLiabilities)}</td></tr>
+                <tr><td>Total Ekuitas (Modal Disetor + Laba Berjalan)</td><td class="text-right font-mono">${formatIDR(m.equity)}</td></tr>
+                <tr style="font-weight:800;background:rgba(8,123,255,0.2);"><td>TOTAL KEWAJIBAN & EKUITAS</td><td class="text-right font-mono text-cyan">${formatIDR(m.totalLiabilities + m.equity)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="glass-card">
+          <div class="tab-bar">
+            <button class="tab-btn ${currentAccTab==='coa'?'active':''}" onclick="currentAccTab='coa';renderView();">Chart of Accounts (COA)</button>
+            <button class="tab-btn ${currentAccTab==='journal'?'active':''}" onclick="currentAccTab='journal';renderView();">Jurnal Umum</button>
+            <button class="tab-btn ${currentAccTab==='trial'?'active':''}" onclick="currentAccTab='trial';renderView();">Neraca Saldo</button>
+            <button class="tab-btn ${currentAccTab==='pnl'?'active':''}" onclick="currentAccTab='pnl';renderView();">Laporan Laba Rugi</button>
+            <button class="tab-btn ${currentAccTab==='bs'?'active':''}" onclick="currentAccTab='bs';renderView();">Neraca Keuangan</button>
+          </div>
+          ${tabBody}
+        </div>
+      `;
+    }
+
+    /* =========================================================================
+       7. OTHER ENTERPRISE ERP MODULES (SALES, PURCHASE, INVENTORY, HR, TAX, ETC)
+       ========================================================================= */
+    function renderSalesModule() {
+      const list = DB.activeCompanyId === 'ALL' ? DB.salesInvoices : DB.salesInvoices.filter(s => s.companyId === DB.activeCompanyId);
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">Penjualan & Piutang Usaha (Sales & Revenue)</h2>
+              <p style="font-size:12px;color:#94A3B8;">Faktur penjualan otomatis memposting Piutang/Kas, Pendapatan Usaha, serta PPN Keluaran.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openNewSaleModal()">+ Buat Faktur Penjualan</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>No. Faktur</th><th>Entitas</th><th>Tanggal</th><th>Pelanggan</th><th>Item / Jasa</th><th class="text-right">Total</th><th class="text-center">Status</th><th class="text-center">Aksi</th></tr></thead>
+              <tbody>
+                ${list.length === 0 ? `<tr><td colspan="8" class="text-center text-muted" style="padding:24px;">Belum ada faktur penjualan. Klik <strong>+ Buat Faktur Penjualan</strong> untuk memulai.</td></tr>` :
+                  list.map(inv => `
+                    <tr>
+                      <td class="font-mono text-cyan" style="font-weight:700;">${inv.id}</td>
+                      <td>${inv.companyId}</td>
+                      <td>${inv.date}</td>
+                      <td style="font-weight:600;">${inv.customer}</td>
+                      <td>${inv.item}</td>
+                      <td class="text-right font-mono text-green" style="font-weight:700;">${formatIDR(inv.total)}</td>
+                      <td class="text-center"><span class="badge ${inv.status==='Paid'?'badge-green':'badge-amber'}">${inv.status}</span></td>
+                      <td class="text-center">
+                        ${inv.status !== 'Paid' ? `<button class="btn btn-sm btn-emerald" onclick="markInvoicePaid('${inv.id}')">Terima Pembayaran</button>` : '<span class="text-muted">Lunas</span>'}
+                      </td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function markInvoicePaid(invId) {
+      const inv = DB.salesInvoices.find(x => x.id === invId);
+      if (!inv || inv.status === 'Paid') return;
+      inv.status = 'Paid';
+      postJournalEntry({
+        companyId: inv.companyId,
+        date: todayISO(),
+        ref: inv.id,
+        description: `Pelunasan Piutang ${inv.id} - ${inv.customer}`,
+        module: 'Sales',
+        lines: [
+          { accountCode: '1-1020', debit: inv.total, credit: 0 },
+          { accountCode: '1-1100', debit: 0, credit: inv.total }
+        ]
+      });
+      renderView();
+      showToast(`Pembayaran ${inv.id} diterima & masuk ke Bank BCA!`);
+    }
+
+    function renderPurchaseModule() {
+      const list = DB.activeCompanyId === 'ALL' ? DB.purchaseOrders : DB.purchaseOrders.filter(p => p.companyId === DB.activeCompanyId);
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">Pembelian & Utang Usaha (Purchase & Procurement)</h2>
+              <p style="font-size:12px;color:#94A3B8;">Mencatat PO, pembelian persediaan/biaya, PPN Masukan, serta pelunasan utang supplier.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openNewPurchaseModal()">+ Buat Purchase Order</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>No. PO</th><th>Entitas</th><th>Tanggal</th><th>Supplier</th><th>Item</th><th class="text-right">Total</th><th class="text-center">Status</th><th class="text-center">Aksi</th></tr></thead>
+              <tbody>
+                ${list.length === 0 ? `<tr><td colspan="8" class="text-center text-muted" style="padding:24px;">Belum ada Purchase Order. Klik <strong>+ Buat Purchase Order</strong> untuk mulai mencatat pembelian.</td></tr>` :
+                  list.map(po => `
+                    <tr>
+                      <td class="font-mono text-amber" style="font-weight:700;">${po.id}</td>
+                      <td>${po.companyId}</td>
+                      <td>${po.date}</td>
+                      <td style="font-weight:600;">${po.supplier}</td>
+                      <td>${po.item}</td>
+                      <td class="text-right font-mono" style="font-weight:700;">${formatIDR(po.total)}</td>
+                      <td class="text-center"><span class="badge ${po.status==='Paid'?'badge-green':'badge-red'}">${po.status}</span></td>
+                      <td class="text-center">
+                        ${po.status !== 'Paid' ? `<button class="btn btn-sm btn-primary" onclick="paySupplierPO('${po.id}')">Bayar Utang</button>` : '<span class="text-muted">Lunas</span>'}
+                      </td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function paySupplierPO(poId) {
+      const po = DB.purchaseOrders.find(x => x.id === poId);
+      if (!po || po.status === 'Paid') return;
+      po.status = 'Paid';
+      postJournalEntry({
+        companyId: po.companyId,
+        date: todayISO(),
+        ref: po.id,
+        description: `Pembayaran Utang ${po.id} - ${po.supplier}`,
+        module: 'Purchase',
+        lines: [
+          { accountCode: '2-1100', debit: po.total, credit: 0 },
+          { accountCode: '1-1020', debit: 0, credit: po.total }
+        ]
+      });
+      renderView();
+      showToast(`Pembayaran supplier ${po.id} berhasil diposting!`);
+    }
+
+    function renderInventoryModule(isWarehouse = false) {
+      const list = DB.activeCompanyId === 'ALL' ? DB.inventory : DB.inventory.filter(i => i.companyId === DB.activeCompanyId);
+      const totalVal = list.reduce((s, x) => s + (x.stock * x.costPrice), 0);
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">${isWarehouse ? 'Manajemen Multi-Gudang & Lokasi (Warehouse)' : 'Persediaan & Valuasi Stok (Inventory)'}</h2>
+              <p style="font-size:12px;color:#94A3B8;">Total Nilai Valuasi Stok: <strong class="font-mono text-green">${formatIDR(totalVal)}</strong></p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-primary" onclick="openAddProductModal()">+ Tambah Produk / SKU</button>
+              ${list.length > 0 ? `<button class="btn btn-secondary" onclick="openStockOpnameModal()">Stock Opname</button>` : ''}
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>SKU</th><th>Entitas</th><th>Nama Produk</th><th>Gudang</th><th class="text-right">Stok</th><th class="text-right">HPP Satuan</th><th class="text-right">Total Nilai</th></tr></thead>
+              <tbody>
+                ${list.length === 0 ? `<tr><td colspan="7" class="text-center text-muted" style="padding:24px;">Belum ada item persediaan. Klik <strong>+ Tambah Produk / SKU</strong> untuk memulai.</td></tr>` :
+                  list.map(p => `
+                    <tr>
+                      <td class="font-mono text-cyan" style="font-weight:700;">${p.sku}</td>
+                      <td>${p.companyId}</td>
+                      <td style="font-weight:600;">${p.name}</td>
+                      <td>${p.warehouse}</td>
+                      <td class="text-right font-mono text-green">${p.stock} ${p.unit}</td>
+                      <td class="text-right font-mono">${formatIDR(p.costPrice)}</td>
+                      <td class="text-right font-mono" style="font-weight:700;">${formatIDR(p.stock * p.costPrice)}</td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderManufacturingModule() {
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">Produksi & Bill of Materials (Manufacturing)</h2>
+              <p style="font-size:12px;color:#94A3B8;">Perintah kerja produksi (Work Order) dan konversi bahan baku menjadi barang jadi.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openAddWorkOrderModal()">+ Buat Work Order</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>No. WO</th><th>Produk Jadi</th><th>Qty Target</th><th class="text-right">Biaya Produksi</th><th class="text-center">Status</th></tr></thead>
+              <tbody>
+                ${DB.manufacturingOrders.length === 0 ? `<tr><td colspan="5" class="text-center text-muted" style="padding:24px;">Belum ada Work Order produksi.</td></tr>` :
+                  DB.manufacturingOrders.map(w => `
+                    <tr>
+                      <td class="font-mono text-cyan">${w.id}</td>
+                      <td style="font-weight:600;">${w.product}</td>
+                      <td class="font-mono">${w.qty} Unit</td>
+                      <td class="text-right font-mono">${formatIDR(w.cost)}</td>
+                      <td class="text-center"><span class="badge badge-green">${w.status}</span></td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderAssetsModule() {
+      const list = DB.activeCompanyId === 'ALL' ? DB.assets : DB.assets.filter(a => a.companyId === DB.activeCompanyId);
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">Aset Tetap & Penyusutan (Fixed Asset)</h2>
+              <p style="font-size:12px;color:#94A3B8;">Metode garis lurus otomatis memposting Beban Penyusutan & Akumulasi Penyusutan.</p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-primary" onclick="openAddAssetModal()">+ Tambah Aset Tetap</button>
+              ${list.length > 0 ? `<button class="btn btn-emerald" onclick="runDepreciation()">Posting Penyusutan Bulanan</button>` : ''}
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Kode</th><th>Nama Aset</th><th>Masa Manfaat</th><th class="text-right">Harga Perolehan</th><th class="text-right">Akum. Penyusutan</th><th class="text-right">Nilai Buku</th></tr></thead>
+              <tbody>
+                ${list.length === 0 ? `<tr><td colspan="6" class="text-center text-muted" style="padding:24px;">Belum ada aset tetap terdaftar.</td></tr>` :
+                  list.map(a => `
+                    <tr>
+                      <td class="font-mono text-cyan">${a.code}</td>
+                      <td style="font-weight:600;">${a.name}</td>
+                      <td>${a.years} Tahun</td>
+                      <td class="text-right font-mono">${formatIDR(a.cost)}</td>
+                      <td class="text-right font-mono text-amber">${formatIDR(a.accumDep)}</td>
+                      <td class="text-right font-mono text-green">${formatIDR(a.cost - a.accumDep)}</td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function runDepreciation() {
+      const list = DB.activeCompanyId === 'ALL' ? DB.assets : DB.assets.filter(a => a.companyId === DB.activeCompanyId);
+      if (!list.length) return;
+      let totalDep = 0;
+      list.forEach(a => {
+        const monthly = Math.round(a.cost / (Math.max(1, a.years) * 12));
+        a.accumDep += monthly;
+        totalDep += monthly;
+      });
+      postJournalEntry({
+        companyId: DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId,
+        date: todayISO(),
+        ref: 'DEP-BULANAN',
+        description: 'Penyusutan Aset Tetap Bulanan',
+        module: 'Assets',
+        lines: [
+          { accountCode: '6-3000', debit: totalDep, credit: 0 },
+          { accountCode: '1-2190', debit: 0, credit: totalDep }
+        ]
+      });
+      renderView();
+      showToast(`Penyusutan ${formatIDR(totalDep)} berhasil diposting ke jurnal!`);
+    }
+
+    function renderHRModule() {
+      const list = DB.activeCompanyId === 'ALL' ? DB.employees : DB.employees.filter(e => e.companyId === DB.activeCompanyId);
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">HR, Absensi & Penggajian (Payroll & PPh 21)</h2>
+              <p style="font-size:12px;color:#94A3B8;">Perhitungan otomatis Gaji Pokok, Tunjangan, BPJS (3%), dan PPh 21 (${DB.taxConfig.pph21Rate}%).</p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-primary" onclick="openAddEmployeeModal()">+ Tambah Karyawan</button>
+              ${list.length > 0 ? `<button class="btn btn-emerald" onclick="runPayrollPosting()">Posting Jurnal Payroll</button>` : ''}
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>NIK</th><th>Nama Karyawan</th><th>Jabatan</th><th class="text-right">Gaji Bruto</th><th class="text-right">Pot. PPh21 & BPJS</th><th class="text-right">Take Home Pay</th></tr></thead>
+              <tbody>
+                ${list.length === 0 ? `<tr><td colspan="6" class="text-center text-muted" style="padding:24px;">Belum ada data karyawan.</td></tr>` :
+                  list.map(emp => {
+                    const gross = emp.baseSalary + emp.allowance;
+                    const ded = Math.round(gross * ((DB.taxConfig.pph21Rate + 3) / 100));
+                    return `
+                      <tr>
+                        <td class="font-mono text-cyan">${emp.nik}</td>
+                        <td style="font-weight:600;">${emp.name}</td>
+                        <td>${emp.position}</td>
+                        <td class="text-right font-mono">${formatIDR(gross)}</td>
+                        <td class="text-right font-mono text-red">-${formatIDR(ded)}</td>
+                        <td class="text-right font-mono text-green">${formatIDR(gross - ded)}</td>
+                      </tr>
+                    `;
+                  }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function runPayrollPosting() {
+      const list = DB.activeCompanyId === 'ALL' ? DB.employees : DB.employees.filter(e => e.companyId === DB.activeCompanyId);
+      if (!list.length) return;
+      const totalGross = list.reduce((s, e) => s + e.baseSalary + e.allowance, 0);
+      postJournalEntry({
+        companyId: DB.activeCompanyId === 'ALL' ? 'EMA' : DB.activeCompanyId,
+        date: todayISO(),
+        ref: 'PAYROLL',
+        description: `Pembayaran Gaji Karyawan (${list.length} Orang)`,
+        module: 'Payroll',
+        lines: [
+          { accountCode: '6-1000', debit: totalGross, credit: 0 },
+          { accountCode: '1-1020', debit: 0, credit: totalGross }
+        ]
+      });
+      renderView();
+      showToast(`Payroll ${formatIDR(totalGross)} berhasil diposting!`);
+    }
+
+    function renderTaxModule() {
+      const journals = getFilteredJournals();
+      const ppnOut = getAccountBalance('2-1200', journals);
+      const ppnIn = getAccountBalance('1-1300', journals);
+      const ppnNet = Math.max(0, ppnOut - ppnIn);
+
+      return `
+        <div class="glass-card">
+          <h2 style="font-size:17px;font-weight:800;margin-bottom:4px;">Perpajakan Indonesia & e-Faktur (Tax Compliance)</h2>
+          <p style="font-size:12px;color:#94A3B8;margin-bottom:16px;">Konfigurasi tarif pajak fleksibel sesuai regulasi DJP terbaru.</p>
+
+          <div class="form-grid" style="margin-bottom:18px;">
+            <div class="form-group">
+              <label>Tarif PPN (%)</label>
+              <input type="number" step="0.1" value="${DB.taxConfig.ppnRate}" onchange="DB.taxConfig.ppnRate=Number(this.value);saveDatabase('Update Tarif PPN');showToast('Tarif PPN diperbarui');" />
+            </div>
+            <div class="form-group">
+              <label>Tarif Efektif PPh 21 (%)</label>
+              <input type="number" step="0.1" value="${DB.taxConfig.pph21Rate}" onchange="DB.taxConfig.pph21Rate=Number(this.value);saveDatabase('Update Tarif PPh21');showToast('Tarif PPh 21 diperbarui');" />
+            </div>
+            <div class="form-group">
+              <label>Tarif PPh 23 Jasa (%)</label>
+              <input type="number" step="0.1" value="${DB.taxConfig.pph23Rate}" onchange="DB.taxConfig.pph23Rate=Number(this.value);saveDatabase('Update Tarif PPh23');showToast('Tarif PPh 23 diperbarui');" />
+            </div>
+            <div class="form-group">
+              <label>Tarif PPh Final UMKM PP 55 (%)</label>
+              <input type="number" step="0.1" value="${DB.taxConfig.pphFinalUmkmRate}" onchange="DB.taxConfig.pphFinalUmkmRate=Number(this.value);saveDatabase('Update Tarif PPh Final');showToast('Tarif PPh Final diperbarui');" />
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Jenis Pajak</th><th class="text-right">Nilai Tercatat</th><th>Keterangan</th></tr></thead>
+              <tbody>
+                <tr><td>PPN Keluaran & Utang Pajak (2-1200)</td><td class="text-right font-mono text-amber">${formatIDR(ppnOut)}</td><td>Otomatis dari Faktur Penjualan</td></tr>
+                <tr><td>PPN Masukan (1-1300)</td><td class="text-right font-mono text-cyan">${formatIDR(ppnIn)}</td><td>Otomatis dari Purchase Order</td></tr>
+                <tr style="font-weight:800;background:rgba(8,123,255,0.18);"><td>Estimasi PPN Kurang Bayar</td><td class="text-right font-mono text-green">${formatIDR(ppnNet)}</td><td>PPN Keluaran dikurangi PPN Masukan</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSimpleListModule(type) {
+      if (type === 'crm') {
+        return `
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <h2 style="font-size:17px;font-weight:800;">CRM & Sales Pipeline</h2>
+              <button class="btn btn-primary" onclick="openAddLeadModal()">+ Tambah Prospek</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Klien</th><th>PIC</th><th>Stage</th><th class="text-right">Estimasi Deal</th></tr></thead>
+                <tbody>
+                  ${DB.crmLeads.length === 0 ? `<tr><td colspan="5" class="text-center text-muted" style="padding:24px;">Belum ada prospek CRM.</td></tr>` :
+                    DB.crmLeads.map(l => `<tr><td class="font-mono text-cyan">${l.id}</td><td style="font-weight:600;">${l.client}</td><td>${l.pic}</td><td><span class="badge badge-blue">${l.stage}</span></td><td class="text-right font-mono text-green">${formatIDR(l.value)}</td></tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+      if (type === 'projects') {
+        return `
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <h2 style="font-size:17px;font-weight:800;">Proyek & Profitabilitas Biaya</h2>
+              <button class="btn btn-primary" onclick="openAddProjectModal()">+ Tambah Proyek</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Nama Proyek</th><th class="text-right">Anggaran</th><th class="text-right">Realisasi Biaya</th><th class="text-right">Margin</th></tr></thead>
+                <tbody>
+                  ${DB.projects.length === 0 ? `<tr><td colspan="5" class="text-center text-muted" style="padding:24px;">Belum ada proyek aktif.</td></tr>` :
+                    DB.projects.map(p => `<tr><td class="font-mono text-cyan">${p.id}</td><td style="font-weight:600;">${p.name}</td><td class="text-right font-mono">${formatIDR(p.budget)}</td><td class="text-right font-mono text-amber">${formatIDR(p.actual)}</td><td class="text-right font-mono text-green">${formatIDR(p.budget - p.actual)}</td></tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+      if (type === 'budgeting') {
+        return `
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <h2 style="font-size:17px;font-weight:800;">Anggaran Departemen (Budget vs Actual)</h2>
+              <button class="btn btn-primary" onclick="openAddBudgetModal()">+ Tambah Anggaran</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Departemen</th><th class="text-right">Budget Bulanan</th><th class="text-right">Realisasi</th><th class="text-right">Sisa Anggaran</th></tr></thead>
+                <tbody>
+                  ${DB.budgets.length === 0 ? `<tr><td colspan="4" class="text-center text-muted" style="padding:24px;">Belum ada alokasi anggaran.</td></tr>` :
+                    DB.budgets.map(b => `<tr><td style="font-weight:600;">${b.dept}</td><td class="text-right font-mono">${formatIDR(b.amount)}</td><td class="text-right font-mono text-cyan">${formatIDR(b.actual)}</td><td class="text-right font-mono text-green">${formatIDR(b.amount - b.actual)}</td></tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+      if (type === 'documents') {
+        return `
+          <div class="glass-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <h2 style="font-size:17px;font-weight:800;">Dokumen & Arsip Digital</h2>
+              <button class="btn btn-primary" onclick="openAddDocModal()">+ Catat Arsip</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Nama Dokumen</th><th>Kategori</th><th>Entitas</th><th>Tanggal</th></tr></thead>
+                <tbody>
+                  ${DB.documents.length === 0 ? `<tr><td colspan="4" class="text-center text-muted" style="padding:24px;">Belum ada arsip dokumen tersimpan.</td></tr>` :
+                    DB.documents.map(d => `<tr><td style="font-weight:600;">${d.name}</td><td><span class="badge badge-blue">${d.category}</span></td><td>${d.companyId}</td><td>${d.date}</td></tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+      // Reports & BI Consolidation
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">Laporan Keuangan & Konsolidasi Holding</h2>
+              <p style="font-size:12px;color:#94A3B8;">Perbandingan kinerja keuangan seluruh entitas di bawah Era Group.</p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-primary btn-sm" onclick="exportAllCSV()">📥 Ekspor CSV / Excel</button>
+              <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ Cetak Laporan</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Entitas Bisnis</th><th>Sektor</th><th class="text-right">Pendapatan</th><th class="text-right">Beban</th><th class="text-right">Laba Bersih</th><th class="text-right">Kas & Bank</th></tr></thead>
+              <tbody>
+                ${DB.companies.filter(c => !c.isHolding).map(c => {
+                  const jList = DB.journals.filter(j => j.companyId === c.id);
+                  const rev = getAccountBalance('4-1000', jList) + getAccountBalance('4-2000', jList);
+                  const exp = getAccountBalance('5-1000', jList) + getAccountBalance('6-1000', jList) + getAccountBalance('6-2000', jList) + getAccountBalance('6-3000', jList);
+                  const cb = getAccountBalance('1-1010', jList) + getAccountBalance('1-1020', jList) + getAccountBalance('1-1030', jList);
+                  return `
+                    <tr>
+                      <td style="font-weight:700;">${c.name}</td>
+                      <td class="text-muted">${c.sector}</td>
+                      <td class="text-right font-mono text-green">${formatIDR(rev)}</td>
+                      <td class="text-right font-mono text-red">${formatIDR(exp)}</td>
+                      <td class="text-right font-mono text-cyan">${formatIDR(rev - exp)}</td>
+                      <td class="text-right font-mono">${formatIDR(cb)}</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    /* =========================================================================
+       8. SETTINGS & AUTO-BACKUP / RESTORE MANAGER
+       ========================================================================= */
+    function renderSettingsModule() {
+      const slots = getBackupSlots();
+      const cfg = DB.autoBackup;
+      const roles = ['Super Administrator', 'Holding Administrator', 'Finance Manager', 'Accounting Staff', 'Auditor'];
+
+      return `
+        <div class="glass-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+            <div>
+              <h2 style="font-size:17px;font-weight:800;">🛡️ Pusat Auto-Backup, Restore & Keamanan Sistem</h2>
+              <p style="font-size:12px;color:#94A3B8;">Setiap perubahan transaksi dicadangkan otomatis hingga 10 titik pemulihan (Rolling Snapshots).</p>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn btn-emerald btn-sm" onclick="recordAutoBackupSnapshot('Manual Backup', true)">📥 Backup & Unduh JSON</button>
+              <label class="btn btn-primary btn-sm" style="cursor:pointer;">
+                📤 Restore dari File JSON
+                <input type="file" accept=".json" style="display:none;" onchange="importBackupJSON(event)" />
+              </label>
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-bottom:18px;">
+            <div style="padding:14px;border-radius:13px;background:rgba(4,13,29,0.65);border:1px solid var(--border-glass);">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:#fff;">
+                <input type="checkbox" ${cfg.enabled ? 'checked' : ''} onchange="DB.autoBackup.enabled=this.checked;saveDatabase();updateAutoBackupIndicator();showToast(this.checked?'Auto-Backup Diaktifkan':'Auto-Backup Dimatikan');" />
+                Aktifkan Auto-Backup Otomatis
+              </label>
+              <div style="font-size:11.5px;color:#94A3B8;margin-top:8px;">
+                Snapshot terakhir: <span class="font-mono text-cyan">${cfg.lastSnapshotTime || 'Menunggu transaksi'}</span>
+              </div>
+            </div>
+
+            <div style="padding:14px;border-radius:13px;background:rgba(4,13,29,0.65);border:1px solid var(--border-glass);">
+              <label style="margin-bottom:6px;">Auto-Download File Backup (.JSON)</label>
+              <select onchange="DB.autoBackup.autoDownloadEvery=Number(this.value);DB.autoBackup.changesCounter=0;saveDatabase();showToast('Pengaturan Auto-Download disimpan');">
+                <option value="0" ${cfg.autoDownloadEvery===0?'selected':''}>Hanya Snapshot Browser (Tanpa Auto-Download)</option>
+                <option value="1" ${cfg.autoDownloadEvery===1?'selected':''}>Unduh Otomatis Setiap 1 Transaksi</option>
+                <option value="5" ${cfg.autoDownloadEvery===5?'selected':''}>Unduh Otomatis Setiap 5 Transaksi</option>
+                <option value="10" ${cfg.autoDownloadEvery===10?'selected':''}>Unduh Otomatis Setiap 10 Transaksi</option>
+              </select>
+            </div>
+          </div>
+
+          <h3 style="font-size:14px;font-weight:800;margin-bottom:10px;">Titik Pemulihan Otomatis (Rolling Snapshots - Maks. 10)</h3>
+          <div class="table-wrap" style="margin-bottom:18px;">
+            <table>
+              <thead><tr><th>Waktu Backup</th><th>Keterangan Perubahan</th><th>Jurnal</th><th class="text-right">Total Aset</th><th class="text-center">Aksi</th></tr></thead>
+              <tbody>
+                ${slots.length === 0 ? `<tr><td colspan="5" class="text-center text-muted" style="padding:18px;">Belum ada snapshot tersimpan. Snapshot otomatis dibuat saat Anda menginput data.</td></tr>` :
+                  slots.map(s => `
+                    <tr>
+                      <td class="font-mono text-green">${s.timestamp}</td>
+                      <td>${s.reason}</td>
+                      <td class="font-mono">${s.journalCount}</td>
+                      <td class="text-right font-mono">${formatIDR(s.totalAssets)}</td>
+                      <td class="text-center"><button class="btn btn-sm btn-secondary" onclick="restoreSnapshot('${s.id}')">Pulihkan</button></td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:14px;border-top:1px solid var(--border-glass);">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-size:12px;color:#94A3B8;">Peran RBAC:</span>
+              <select style="width:auto;" onchange="DB.activeRole=this.value;document.getElementById('role-subtitle').textContent=this.value;saveDatabase();">
+                ${roles.map(r => `<option value="${r}" ${DB.activeRole===r?'selected':''}>${r}</option>`).join('')}
+              </select>
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="openResetConfirmModal()">🗑️ Kosongkan Semua Data (Reset ke Rp 0)</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function restoreSnapshot(snapId) {
+      const slots = getBackupSlots();
+      const found = slots.find(s => s.id === snapId);
+      if (!found || !found.snapshotData) {
+        showToast('Snapshot tidak ditemukan.', 'error');
+        return;
+      }
+      DB = JSON.parse(JSON.stringify(found.snapshotData));
+      saveDatabase();
+      renderCompanySelect();
+      renderView();
+      closeModal();
+      showToast(`Data berhasil dipulihkan ke titik ${found.timestamp}!`);
+    }
+
+    function importBackupJSON(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          const parsed = JSON.parse(ev.target.result);
+          const candidate = parsed.database || parsed;
+          if (!candidate || !Array.isArray(candidate.coa)) throw new Error('Invalid');
+          DB = candidate;
+          saveDatabase('Restore dari File JSON');
+          renderCompanySelect();
+          renderView();
+          closeModal();
+          showToast(`Database dipulihkan dari ${file.name}!`);
+        } catch (err) {
+          showToast('File JSON tidak valid!', 'error');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetAllToCleanSlate() {
+      recordAutoBackupSnapshot('Backup Sebelum Reset', false);
+      localStorage.removeItem(DB_KEY);
+      DB = JSON.parse(JSON.stringify(DEFAULT_CLEAN_DB));
+      saveDatabase();
+      renderCompanySelect();
+      renderView();
+      closeModal();
+      showToast('Seluruh data berhasil dikosongkan ke Rp 0 (Clean Slate)!');
+    }
+
+    /* =========================================================================
+       9. INTERACTIVE MODALS (OPENING BALANCE, SALES, PURCHASE, JOURNAL, ETC.)
+       ========================================================================= */
+    function openModal(html) {
+      const overlay = document.getElementById('modal-overlay');
+      const box = document.getElementById('modal-box');
+      box.innerHTML = html;
+      overlay.classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+    }
+
+    function openAutoBackupModal() {
+      const slots = getBackupSlots();
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">🛡️ Auto-Backup & Restore Cepat</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;font-size:12.5px;">
+          <p class="text-muted">Status: <strong class="text-green">${DB.autoBackup.enabled ? 'AKTIF' : 'NONAKTIF'}</strong> • Snapshot terakhir: <span class="font-mono text-cyan">${DB.autoBackup.lastSnapshotTime || 'Belum ada'}</span></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn btn-emerald" onclick="recordAutoBackupSnapshot('Backup Manual', true)">📥 Unduh Backup JSON Sekarang</button>
+            <label class="btn btn-primary" style="cursor:pointer;">
+              📤 Unggah File Restore (.JSON)
+              <input type="file" accept=".json" style="display:none;" onchange="importBackupJSON(event)" />
+            </label>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Waktu</th><th>Perubahan</th><th class="text-center">Pulihkan</th></tr></thead>
+              <tbody>
+                ${slots.length === 0 ? `<tr><td colspan="3" class="text-center text-muted" style="padding:14px;">Belum ada titik pemulihan.</td></tr>` :
+                  slots.slice(0, 5).map(s => `
+                    <tr>
+                      <td class="font-mono text-green">${s.timestamp}</td>
+                      <td>${s.reason}</td>
+                      <td class="text-center"><button class="btn btn-sm btn-secondary" onclick="restoreSnapshot('${s.id}')">Restore</button></td>
+                    </tr>
+                  `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `);
+    }
+
+    function openOpeningBalanceModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">💰 Input Saldo Awal Perusahaan (Opening Balance)</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitOpeningBalance(event)" class="form-grid">
+          <div class="form-group">
+            <label>Pilih Entitas Perusahaan</label>
+            <select id="ob-comp">
+              ${DB.companies.filter(c => !c.isHolding).map(c => `<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Saldo Awal</label>
+            <input type="date" id="ob-date" value="${todayISO()}" required />
+          </div>
+          <div class="form-group">
+            <label>Saldo Awal Kas Operasional (1-1010)</label>
+            <input type="number" id="ob-cash" min="0" value="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Saldo Awal Bank BCA (1-1020)</label>
+            <input type="number" id="ob-bca" min="0" value="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Saldo Awal Bank Mandiri (1-1030)</label>
+            <input type="number" id="ob-mandiri" min="0" value="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Saldo Awal Piutang Usaha (1-1100)</label>
+            <input type="number" id="ob-ar" min="0" value="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Saldo Awal Persediaan Barang (1-1200)</label>
+            <input type="number" id="ob-inv" min="0" value="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Saldo Awal Aset Tetap (1-2100)</label>
+            <input type="number" id="ob-asset" min="0" value="0" class="font-mono" />
+          </div>
+          <div class="form-group full" style="background:rgba(0,212,255,0.09);padding:10px;border-radius:10px;font-size:11.5px;color:#CBD5E1;">
+            Sistem otomatis mengkreditkan total saldo awal ke akun <strong>3-1000 (Modal Disetor)</strong> agar jurnal Double-Entry langsung seimbang.
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;margin-top:6px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-emerald">Simpan Saldo Awal</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitOpeningBalance(e) {
+      e.preventDefault();
+      const companyId = document.getElementById('ob-comp').value;
+      const date = document.getElementById('ob-date').value;
+      const cash = Number(document.getElementById('ob-cash').value) || 0;
+      const bca = Number(document.getElementById('ob-bca').value) || 0;
+      const mandiri = Number(document.getElementById('ob-mandiri').value) || 0;
+      const ar = Number(document.getElementById('ob-ar').value) || 0;
+      const inv = Number(document.getElementById('ob-inv').value) || 0;
+      const asset = Number(document.getElementById('ob-asset').value) || 0;
+      const total = cash + bca + mandiri + ar + inv + asset;
+
+      if (total <= 0) {
+        showToast('Isi minimal satu nominal saldo awal lebih dari Rp 0.', 'error');
+        return;
+      }
+
+      const lines = [];
+      if (cash > 0) lines.push({ accountCode: '1-1010', debit: cash, credit: 0 });
+      if (bca > 0) lines.push({ accountCode: '1-1020', debit: bca, credit: 0 });
+      if (mandiri > 0) lines.push({ accountCode: '1-1030', debit: mandiri, credit: 0 });
+      if (ar > 0) lines.push({ accountCode: '1-1100', debit: ar, credit: 0 });
+      if (inv > 0) lines.push({ accountCode: '1-1200', debit: inv, credit: 0 });
+      if (asset > 0) lines.push({ accountCode: '1-2100', debit: asset, credit: 0 });
+      lines.push({ accountCode: '3-1000', debit: 0, credit: total });
+
+      postJournalEntry({
+        companyId,
+        date,
+        ref: `OB-${companyId}`,
+        description: `Saldo Awal Neraca - ${companyId}`,
+        module: 'Accounting',
+        lines
+      });
+
+      closeModal();
+      renderView();
+      showToast(`Saldo awal ${formatIDR(total)} berhasil disimpan & di-backup!`);
+    }
+
+    function openNewSaleModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">🛒 Buat Faktur Penjualan Baru</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitNewSale(event)" class="form-grid">
+          <div class="form-group">
+            <label>Entitas Bisnis</label>
+            <select id="sl-comp">
+              ${DB.companies.filter(c => !c.isHolding).map(c => `<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nama Pelanggan</label>
+            <input type="text" id="sl-cust" required placeholder="Contoh: PT Maju Bersama" />
+          </div>
+          <div class="form-group">
+            <label>Deskripsi Produk / Jasa</label>
+            <input type="text" id="sl-item" required placeholder="Contoh: Penjualan Produk / Jasa" />
+          </div>
+          <div class="form-group">
+            <label>Nilai Penjualan DPP (Rp)</label>
+            <input type="number" id="sl-amount" min="1" required placeholder="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Include PPN (${DB.taxConfig.ppnRate}%)</label>
+            <select id="sl-ppn">
+              <option value="0">Tanpa PPN (0%)</option>
+              <option value="1">Tambah PPN ${DB.taxConfig.ppnRate}%</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Metode Pembayaran</label>
+            <select id="sl-pay">
+              <option value="1-1020">Lunas - Transfer Bank BCA (1-1020)</option>
+              <option value="1-1010">Lunas - Kas Tunai (1-1010)</option>
+              <option value="1-1100">Tempo - Piutang Usaha (1-1100)</option>
+            </select>
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;margin-top:6px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan & Posting Jurnal</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitNewSale(e) {
+      e.preventDefault();
+      const companyId = document.getElementById('sl-comp').value;
+      const customer = document.getElementById('sl-cust').value.trim();
+      const item = document.getElementById('sl-item').value.trim();
+      const dpp = Number(document.getElementById('sl-amount').value) || 0;
+      const withPpn = document.getElementById('sl-ppn').value === '1';
+      const payAcc = document.getElementById('sl-pay').value;
+      const ppnVal = withPpn ? Math.round(dpp * (DB.taxConfig.ppnRate / 100)) : 0;
+      const total = dpp + ppnVal;
+      const invId = 'INV-' + String(DB.salesInvoices.length + 1).padStart(4, '0');
+
+      DB.salesInvoices.unshift({
+        id: invId,
+        companyId,
+        date: todayISO(),
+        customer,
+        item,
+        total,
+        status: payAcc === '1-1100' ? 'Unpaid' : 'Paid'
+      });
+
+      const lines = [
+        { accountCode: payAcc, debit: total, credit: 0 },
+        { accountCode: '4-1000', debit: 0, credit: dpp }
+      ];
+      if (ppnVal > 0) lines.push({ accountCode: '2-1200', debit: 0, credit: ppnVal });
+
+      postJournalEntry({
+        companyId,
+        date: todayISO(),
+        ref: invId,
+        description: `Penjualan ${invId} - ${customer} (${item})`,
+        module: 'Sales',
+        lines
+      });
+
+      closeModal();
+      renderView();
+      showToast(`Faktur ${invId} senilai ${formatIDR(total)} berhasil diposting!`);
+    }
+
+    function openNewPurchaseModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">📦 Buat Purchase Order & Pembelian</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitNewPurchase(event)" class="form-grid">
+          <div class="form-group">
+            <label>Entitas Bisnis</label>
+            <select id="po-comp">
+              ${DB.companies.filter(c => !c.isHolding).map(c => `<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nama Supplier / Vendor</label>
+            <input type="text" id="po-supp" required placeholder="Contoh: PT Supplier Utama" />
+          </div>
+          <div class="form-group">
+            <label>Item / Kebutuhan Pembelian</label>
+            <input type="text" id="po-item" required placeholder="Contoh: Bahan Baku / Operasional" />
+          </div>
+          <div class="form-group">
+            <label>Nominal Pembelian (Rp)</label>
+            <input type="number" id="po-amount" min="1" required placeholder="0" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Alokasi Akun Debit</label>
+            <select id="po-debit">
+              <option value="1-1200">Persediaan Barang (1-1200)</option>
+              <option value="5-1000">Harga Pokok Penjualan (5-1000)</option>
+              <option value="6-2000">Beban Operasional (6-2000)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Metode Pembayaran</label>
+            <select id="po-pay">
+              <option value="1-1020">Lunas - Transfer Bank BCA (1-1020)</option>
+              <option value="2-1100">Tempo - Utang Usaha (2-1100)</option>
+            </select>
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;margin-top:6px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan PO & Posting Jurnal</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitNewPurchase(e) {
+      e.preventDefault();
+      const companyId = document.getElementById('po-comp').value;
+      const supplier = document.getElementById('po-supp').value.trim();
+      const item = document.getElementById('po-item').value.trim();
+      const total = Number(document.getElementById('po-amount').value) || 0;
+      const debitAcc = document.getElementById('po-debit').value;
+      const payAcc = document.getElementById('po-pay').value;
+      const poId = 'PO-' + String(DB.purchaseOrders.length + 1).padStart(4, '0');
+
+      DB.purchaseOrders.unshift({
+        id: poId,
+        companyId,
+        date: todayISO(),
+        supplier,
+        item,
+        total,
+        status: payAcc === '2-1100' ? 'Unpaid' : 'Paid'
+      });
+
+      postJournalEntry({
+        companyId,
+        date: todayISO(),
+        ref: poId,
+        description: `Pembelian ${poId} - ${supplier} (${item})`,
+        module: 'Purchase',
+        lines: [
+          { accountCode: debitAcc, debit: total, credit: 0 },
+          { accountCode: payAcc, debit: 0, credit: total }
+        ]
+      });
+
+      closeModal();
+      renderView();
+      showToast(`Purchase Order ${poId} berhasil diposting!`);
+    }
+
+    function openNewJournalModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      const coaOpts = DB.coa.map(a => `<option value="${a.code}">${a.code} - ${a.name}</option>`).join('');
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">📒 Input Jurnal Umum (Double-Entry)</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitManualJournal(event)" class="form-grid">
+          <div class="form-group">
+            <label>Entitas Perusahaan</label>
+            <select id="jv-comp">
+              ${DB.companies.filter(c => !c.isHolding).map(c => `<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Jurnal</label>
+            <input type="date" id="jv-date" value="${todayISO()}" required />
+          </div>
+          <div class="form-group full">
+            <label>Keterangan / Memo Transaksi</label>
+            <input type="text" id="jv-desc" required placeholder="Contoh: Pembayaran biaya listrik & internet kantor" />
+          </div>
+          <div class="form-group">
+            <label class="text-green">Akun DEBIT</label>
+            <select id="jv-debit">${coaOpts}</select>
+          </div>
+          <div class="form-group">
+            <label class="text-amber">Akun KREDIT</label>
+            <select id="jv-credit">${coaOpts}</select>
+          </div>
+          <div class="form-group full">
+            <label class="text-cyan">Nominal Seimbang (Rp)</label>
+            <input type="number" id="jv-amount" min="1" required placeholder="0" class="font-mono" />
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;margin-top:6px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Posting Jurnal</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitManualJournal(e) {
+      e.preventDefault();
+      const debitAcc = document.getElementById('jv-debit').value;
+      const creditAcc = document.getElementById('jv-credit').value;
+      if (debitAcc === creditAcc) {
+        showToast('Akun Debit dan Kredit tidak boleh sama!', 'error');
+        return;
+      }
+      postJournalEntry({
+        companyId: document.getElementById('jv-comp').value,
+        date: document.getElementById('jv-date').value,
+        ref: 'MAN-JV',
+        description: document.getElementById('jv-desc').value.trim(),
+        module: 'Accounting',
+        lines: [
+          { accountCode: debitAcc, debit: Number(document.getElementById('jv-amount').value), credit: 0 },
+          { accountCode: creditAcc, debit: 0, credit: Number(document.getElementById('jv-amount').value) }
+        ]
+      });
+      closeModal();
+      renderView();
+      showToast('Jurnal umum seimbang berhasil diposting!');
+    }
+
+    function openAddCompanyModal() {
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">🏢 Tambah Entitas Anak Baru</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitAddCompany(event)" class="form-grid">
+          <div class="form-group">
+            <label>Kode Entitas (3 Huruf)</label>
+            <input type="text" id="cmp-id" maxlength="4" required placeholder="Contoh: EGS" style="text-transform:uppercase;" />
+          </div>
+          <div class="form-group">
+            <label>Sektor Bisnis</label>
+            <input type="text" id="cmp-sec" required placeholder="Contoh: Logistik & Distribusi" />
+          </div>
+          <div class="form-group full">
+            <label>Nama Lengkap Perusahaan</label>
+            <input type="text" id="cmp-name" required placeholder="Contoh: Era Global Solusi" />
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan Entitas</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitAddCompany(e) {
+      e.preventDefault();
+      const id = document.getElementById('cmp-id').value.trim().toUpperCase();
+      const name = document.getElementById('cmp-name').value.trim();
+      const sector = document.getElementById('cmp-sec').value.trim();
+      if (DB.companies.some(c => c.id === id)) {
+        showToast('Kode entitas sudah digunakan!', 'error');
+        return;
+      }
+      DB.companies.push({ id, code: id.slice(0, 2), name, shortName: name, sector, npwp: '05.000.000.0-000.000', isHolding: false });
+      saveDatabase(`Tambah Entitas ${name}`);
+      renderCompanySelect();
+      renderView();
+      closeModal();
+      showToast(`Entitas ${name} berhasil ditambahkan!`);
+    }
+
+    function openAddCoaModal() {
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">Tambah Akun Chart of Accounts (COA)</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitAddCoa(event)" class="form-grid">
+          <div class="form-group">
+            <label>Kode Akun</label>
+            <input type="text" id="coa-code" required placeholder="Contoh: 6-4000" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Kategori</label>
+            <select id="coa-cat">
+              <option value="Aset">Aset</option>
+              <option value="Kewajiban">Kewajiban</option>
+              <option value="Ekuitas">Ekuitas</option>
+              <option value="Pendapatan">Pendapatan</option>
+              <option value="Beban">Beban</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Nama Akun</label>
+            <input type="text" id="coa-name" required placeholder="Contoh: Beban Pemasaran & Iklan" />
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan Akun</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitAddCoa(e) {
+      e.preventDefault();
+      const code = document.getElementById('coa-code').value.trim();
+      const name = document.getElementById('coa-name').value.trim();
+      const category = document.getElementById('coa-cat').value;
+      const normal = (category === 'Aset' || category === 'Beban') ? 'Debit' : 'Kredit';
+      DB.coa.push({ code, name, category, normal });
+      saveDatabase(`Tambah Akun COA ${code}`);
+      closeModal();
+      renderView();
+      showToast(`Akun ${code} ditambahkan!`);
+    }
+
+    function openAddProductModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">Tambah Produk / SKU Persediaan</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitAddProduct(event)" class="form-grid">
+          <div class="form-group">
+            <label>Entitas</label>
+            <select id="pr-comp">${DB.companies.filter(c=>!c.isHolding).map(c=>`<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}</select>
+          </div>
+          <div class="form-group">
+            <label>Kode SKU</label>
+            <input type="text" id="pr-sku" required placeholder="SKU-001" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>Nama Produk</label>
+            <input type="text" id="pr-name" required placeholder="Nama Barang" />
+          </div>
+          <div class="form-group">
+            <label>Gudang</label>
+            <input type="text" id="pr-wh" required value="Gudang Utama" />
+          </div>
+          <div class="form-group">
+            <label>Stok Awal</label>
+            <input type="number" id="pr-stock" min="0" required value="10" class="font-mono" />
+          </div>
+          <div class="form-group">
+            <label>HPP Satuan (Rp)</label>
+            <input type="number" id="pr-cost" min="0" required value="500000" class="font-mono" />
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan Produk</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitAddProduct(e) {
+      e.preventDefault();
+      DB.inventory.unshift({
+        sku: document.getElementById('pr-sku').value.trim(),
+        companyId: document.getElementById('pr-comp').value,
+        name: document.getElementById('pr-name').value.trim(),
+        warehouse: document.getElementById('pr-wh').value.trim(),
+        stock: Number(document.getElementById('pr-stock').value) || 0,
+        unit: 'Unit',
+        costPrice: Number(document.getElementById('pr-cost').value) || 0
+      });
+      saveDatabase('Tambah Produk Persediaan');
+      closeModal();
+      renderView();
+      showToast('Produk persediaan ditambahkan!');
+    }
+
+    function openStockOpnameModal() {
+      openModal(`
+        <div class="modal-head">
+          <h3 style="font-size:16px;font-weight:800;">Stock Opname / Penyesuaian Stok</h3>
+          <button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button>
+        </div>
+        <form onsubmit="submitStockOpname(event)" class="form-grid">
+          <div class="form-group full">
+            <label>Pilih Produk</label>
+            <select id="so-sku">${DB.inventory.map(p=>`<option value="${p.sku}">${p.sku} - ${p.name} (Stok: ${p.stock})</option>`).join('')}</select>
+          </div>
+          <div class="form-group full">
+            <label>Stok Fisik Aktual</label>
+            <input type="number" id="so-qty" min="0" required class="font-mono" />
+          </div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;gap:8px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal()">Batal</button>
+            <button type="submit" class="btn btn-primary">Update Stok</button>
+          </div>
+        </form>
+      `);
+    }
+
+    function submitStockOpname(e) {
+      e.preventDefault();
+      const sku = document.getElementById('so-sku').value;
+      const qty = Number(document.getElementById('so-qty').value) || 0;
+      const item = DB.inventory.find(x => x.sku === sku);
+      if (item) {
+        item.stock = qty;
+        saveDatabase(`Stock Opname ${sku}`);
+        closeModal();
+        renderView();
+        showToast(`Stok ${item.name} diperbarui!`);
+      }
+    }
+
+    function openAddWorkOrderModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Buat Work Order Produksi</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.manufacturingOrders.unshift({id:'WO-'+(DB.manufacturingOrders.length+1),product:document.getElementById('wo-p').value,qty:Number(document.getElementById('wo-q').value),cost:Number(document.getElementById('wo-c').value),status:'Selesai'});saveDatabase('Tambah Work Order');closeModal();renderView();showToast('Work Order ditambahkan!');" class="form-grid">
+          <div class="form-group full"><label>Produk Jadi</label><input id="wo-p" required /></div>
+          <div class="form-group"><label>Qty</label><input type="number" id="wo-q" required value="10" /></div>
+          <div class="form-group"><label>Biaya Produksi (Rp)</label><input type="number" id="wo-c" required value="5000000" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      `);
+    }
+
+    function openAddAssetModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Tambah Aset Tetap</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.assets.unshift({code:'AST-'+(DB.assets.length+1),companyId:document.getElementById('as-cmp').value,name:document.getElementById('as-n').value,cost:Number(document.getElementById('as-c').value),years:Number(document.getElementById('as-y').value),accumDep:0});saveDatabase('Tambah Aset Tetap');closeModal();renderView();showToast('Aset tetap didaftarkan!');" class="form-grid">
+          <div class="form-group"><label>Entitas</label><select id="as-cmp">${DB.companies.filter(c=>!c.isHolding).map(c=>`<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}</select></div>
+          <div class="form-group"><label>Masa Manfaat (Tahun)</label><input type="number" id="as-y" min="1" value="5" required /></div>
+          <div class="form-group full"><label>Nama Aset</label><input id="as-n" required placeholder="Contoh: Kendaraan Operasional" /></div>
+          <div class="form-group full"><label>Harga Perolehan (Rp)</label><input type="number" id="as-c" min="1" required value="100000000" class="font-mono" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan Aset</button></div>
+        </form>
+      `);
+    }
+
+    function openAddEmployeeModal() {
+      const defComp = DB.activeCompanyId === 'ALL' ? 'EBF' : DB.activeCompanyId;
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Tambah Karyawan (HR & Payroll)</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.employees.unshift({nik:document.getElementById('em-nik').value,companyId:document.getElementById('em-cmp').value,name:document.getElementById('em-n').value,position:document.getElementById('em-p').value,baseSalary:Number(document.getElementById('em-b').value),allowance:Number(document.getElementById('em-a').value)});saveDatabase('Tambah Karyawan');closeModal();renderView();showToast('Karyawan ditambahkan!');" class="form-grid">
+          <div class="form-group"><label>Entitas</label><select id="em-cmp">${DB.companies.filter(c=>!c.isHolding).map(c=>`<option value="${c.id}" ${c.id===defComp?'selected':''}>${c.name}</option>`).join('')}</select></div>
+          <div class="form-group"><label>NIK</label><input id="em-nik" required placeholder="EG-001" /></div>
+          <div class="form-group"><label>Nama Lengkap</label><input id="em-n" required /></div>
+          <div class="form-group"><label>Jabatan</label><input id="em-p" required /></div>
+          <div class="form-group"><label>Gaji Pokok (Rp)</label><input type="number" id="em-b" required value="7500000" class="font-mono" /></div>
+          <div class="form-group"><label>Tunjangan (Rp)</label><input type="number" id="em-a" required value="1500000" class="font-mono" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      `);
+    }
+
+    function openAddLeadModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Tambah Prospek CRM</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.crmLeads.unshift({id:'LD-'+(DB.crmLeads.length+1),client:document.getElementById('ld-c').value,pic:document.getElementById('ld-p').value,stage:'Negosiasi',value:Number(document.getElementById('ld-v').value)});saveDatabase('Tambah Lead CRM');closeModal();renderView();showToast('Prospek ditambahkan!');" class="form-grid">
+          <div class="form-group full"><label>Nama Klien</label><input id="ld-c" required /></div>
+          <div class="form-group"><label>PIC</label><input id="ld-p" required /></div>
+          <div class="form-group"><label>Nilai Deal (Rp)</label><input type="number" id="ld-v" required value="50000000" class="font-mono" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      `);
+    }
+
+    function openAddProjectModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Tambah Proyek Baru</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.projects.unshift({id:'PRJ-'+(DB.projects.length+1),name:document.getElementById('pj-n').value,budget:Number(document.getElementById('pj-b').value),actual:Number(document.getElementById('pj-a').value)});saveDatabase('Tambah Proyek');closeModal();renderView();showToast('Proyek ditambahkan!');" class="form-grid">
+          <div class="form-group full"><label>Nama Proyek</label><input id="pj-n" required /></div>
+          <div class="form-group"><label>Anggaran (Rp)</label><input type="number" id="pj-b" required value="150000000" class="font-mono" /></div>
+          <div class="form-group"><label>Biaya Aktual (Rp)</label><input type="number" id="pj-a" required value="0" class="font-mono" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      `);
+    }
+
+    function openAddBudgetModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Tambah Anggaran Departemen</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.budgets.unshift({dept:document.getElementById('bg-d').value,amount:Number(document.getElementById('bg-a').value),actual:0});saveDatabase('Tambah Anggaran');closeModal();renderView();showToast('Anggaran ditambahkan!');" class="form-grid">
+          <div class="form-group"><label>Departemen</label><input id="bg-d" required /></div>
+          <div class="form-group"><label>Budget Bulanan (Rp)</label><input type="number" id="bg-a" required value="30000000" class="font-mono" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      `);
+    }
+
+    function openAddDocModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">Catat Arsip Dokumen</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <form onsubmit="event.preventDefault();DB.documents.unshift({name:document.getElementById('dc-n').value,category:document.getElementById('dc-c').value,companyId:DB.activeCompanyId,date:todayISO()});saveDatabase('Tambah Dokumen');closeModal();renderView();showToast('Dokumen dicatat!');" class="form-grid">
+          <div class="form-group full"><label>Nama Dokumen</label><input id="dc-n" required /></div>
+          <div class="form-group full"><label>Kategori</label><input id="dc-c" required value="Kontrak & Legal" /></div>
+          <div class="form-group full" style="flex-direction:row;justify-content:flex-end;"><button type="submit" class="btn btn-primary">Simpan</button></div>
+        </form>
+      `);
+    }
+
+    function openNotificationsModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;">🔔 Notifikasi Sistem</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;">
+          ${DB.notifications.map(n => `
+            <div style="padding:11px;border-radius:11px;background:rgba(4,13,29,0.7);border:1px solid var(--border-glass);">
+              <div style="font-weight:700;color:#00D4FF;">${n.title}</div>
+              <div style="color:#CBD5E1;margin-top:3px;">${n.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      `);
+    }
+
+    function openResetConfirmModal() {
+      openModal(`
+        <div class="modal-head"><h3 style="font-size:16px;font-weight:800;color:#FF5268;">⚠️ Reset Bersih ke Rp 0</h3><button class="btn btn-sm btn-secondary" onclick="closeModal()">✕</button></div>
+        <p style="font-size:13px;color:#CBD5E1;margin-bottom:14px;">Seluruh transaksi dan saldo akan dikosongkan ke <strong>Rp 0</strong>. Snapshot Auto-Backup sebelumnya tetap aman tersimpan di browser.</p>
+        <div style="display:flex;justify-content:flex-end;gap:8px;">
+          <button class="btn btn-secondary" onclick="closeModal()">Batal</button>
+          <button class="btn btn-danger" onclick="resetAllToCleanSlate()">Ya, Kosongkan Data</button>
+        </div>
+      `);
+    }
+
+    function exportAllCSV() {
+      const rows = [['Kode Akun', 'Nama Akun', 'Kategori', 'Saldo']];
+      const journals = getFilteredJournals();
+      DB.coa.forEach(a => {
+        rows.push([a.code, `"${a.name}"`, a.category, getAccountBalance(a.code, journals)]);
+      });
+      const csv = rows.map(r => r.join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `ERA-GROUP-LAPORAN-${todayISO()}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      showToast('Laporan keuangan berhasil diekspor ke CSV!');
+    }
+
+    function showToast(msg, type = 'success') {
+      const stack = document.getElementById('toast-stack');
+      const item = document.createElement('div');
+      item.className = 'toast-item';
+      item.style.borderColor = type === 'error' ? '#FF5268' : '#00D69A';
+      item.innerHTML = `<span>${type === 'error' ? '⚠️' : '✅'}</span><span>${msg}</span>`;
+      stack.appendChild(item);
+      setTimeout(() => item.remove(), 3400);
+    }
+
+    /* =========================================================================
+       10. MAIN VIEW ROUTER & BOOTSTRAP
+       ========================================================================= */
+    function renderView() {
+      const vp = document.getElementById('app-viewport');
+      if (!vp) return;
+      try {
+        switch (currentRoute) {
+          case 'dashboard': vp.innerHTML = renderDashboard(); break;
+          case 'accounting': vp.innerHTML = renderAccountingModule(); break;
+          case 'sales': vp.innerHTML = renderSalesModule(); break;
+          case 'purchase': vp.innerHTML = renderPurchaseModule(); break;
+          case 'inventory': vp.innerHTML = renderInventoryModule(false); break;
+          case 'warehouse': vp.innerHTML = renderInventoryModule(true); break;
+          case 'manufacturing': vp.innerHTML = renderManufacturingModule(); break;
+          case 'assets': vp.innerHTML = renderAssetsModule(); break;
+          case 'hr': vp.innerHTML = renderHRModule(); break;
+          case 'tax': vp.innerHTML = renderTaxModule(); break;
+          case 'crm': vp.innerHTML = renderSimpleListModule('crm'); break;
+          case 'projects': vp.innerHTML = renderSimpleListModule('projects'); break;
+          case 'budgeting': vp.innerHTML = renderSimpleListModule('budgeting'); break;
+          case 'documents': vp.innerHTML = renderSimpleListModule('documents'); break;
+          case 'reports': vp.innerHTML = renderSimpleListModule('reports'); break;
+          case 'settings': vp.innerHTML = renderSettingsModule(); break;
+          default: vp.innerHTML = renderDashboard();
+        }
+      } catch (err) {
+        console.error('Render error:', err);
+        vp.innerHTML = `<div class="glass-card"><h3 style="color:#FF5268;">Terjadi kesalahan tampilan</h3><p>${err.message}</p></div>`;
+      }
+    }
+
+    // Immediate Bootstrap
+    renderSidebar();
+    renderCompanySelect();
+    updateAutoBackupIndicator();
+    renderView();
+  </script>
+</body>
+</html>
